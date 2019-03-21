@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+
+        /*
+         1.JS中严格区分大小写
+         2.JS中每一条语句以分号（；）结尾，如果不加分号，浏览器会自动添加，但是会消耗一些系统资源，而且有时候浏览器会加错分号，所以在开发中分号必须加
+         3.JS中会忽略多个空格和换行，所以我们可以利用空格和换行对代码进行格式化
+        */
+
+        //声明变量，在js中使用var关键字来声明一个变量
+        var a;
+        a=123;//为变量赋值
+        alert(a);
+
+        //声明和赋值同时
+        var a=456;
+        alert(a);
+
+
+        /*
+        在JS中一共有六种数据类型
+            String  字符串
+            Number  数值
+            Boolean  布尔值
+            Null  空值
+            Undefined  未定义
+            Object  对象
+         */
+        //在字符串中使用\作为转义符号  \n 换行   \t 制表符
+
+        //使用typeof检查变量的数据类型
+
+        /*JS中可以表示的数字的最大值  Number.MAX_VALUE
+          如果使用Number表示的数字超过了最大值，则会返回一个Infinity，表示正无穷
+          Number.MIN_VALUE  大于0的最小值
+          NaN 是一个特殊的数字，表示Not A Number
+          使用typeof检查NaN也会返回number
+
+          Null类型只有一个null，null表示一个空的对象，使用typeof检查一个null时，返回object
+
+        */
+
+        var a=Number.MAX_VALUE;
+        a=a*a;
+        a=NaN;
+        alert(a);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

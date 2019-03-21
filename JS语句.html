@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS语句</title>
+</head>
+<body onkeyup="whichbtn(event)" onload="checkCookies()" onmousedown="whichButton(event),show_coords(event)">
+<!--if—else语句-->
+<p>点击按钮，获得基于时间的问候</p>
+<button onclick="myFunction1()">点击按钮1</button>
+<p id="demo1"></p>
+<script>
+    function myFunction1() {
+        var x="";
+        var time=new Date().getHours();
+        if(time<10)
+        {
+            x="Good morning"
+        }
+        else if(time<20)
+        {
+            x="Good day"
+        }
+        else{
+            x="Good evening"
+        }
+        document.getElementById("demo1").innerHTML=x;
+    }
+</script>
+
+<!--switch语句-->
+<p>点击按钮来显示今天是周几</p>
+<button onclick="myFunction2()">点击按钮2</button>
+<p id="demo2"></p>
+<script>
+    function myFunction2() {
+        var x="";
+        var d=new Date().getDay();
+        switch (d) {
+            case 0: x="Today is Sunday";break;
+            case 1: x="Today is Monday";break;
+            case 2: x="Today is Tuesday";break;
+            case 3: x="Today is Wednesday";break;
+            case 4: x="Today is Thursday";break;
+            case 5: x="Today is Friday";break;
+            case 6: x="Today is Saturday";break;
+
+        }
+        document.getElementById("demo2").innerHTML=x;
+    }
+</script>
+
+<!--for循环-->
+<p>点击按钮for循环汽车的类型：</p>
+<button onclick="myFunction3()">点击按钮3</button>
+<p id="demo3"></p>
+<script>
+    function myFunction3() {
+        var c="";
+        cars=["BWM","Volvo","Saab","Ford"];
+        for(var i=0;i<cars.length;i++)
+        {
+            //document.write(cars[i]+"<br>");
+            c=c+cars[i]+"<br>";
+        }
+        document.getElementById("demo3").innerHTML=c;
+    }
+
+</script>
+
+<!--for/in循环遍历对象的属性-->
+<p>点击按钮，for/in循环遍历对象"person"的属性</p>
+<button onclick="myFunction4()">点击按钮4</button>
+<p id="demo4"></p>
+<script>
+    function myFunction4() {
+        var person={firstname:"Bill",lastname:"Gates",age:56};
+        var txt="";
+        for(var x in person)
+        {
+            txt+=person[x]+" ";
+        }
+        document.getElementById("demo4").innerHTML=txt;
+    }
+</script>
+
+<!--while循环-->
+<p>点击按钮，while循环汽车类型</p>
+<button onclick="myFunction5()">点击按钮5</button>
+<p id="demo5"></p>
+<script>
+    function myFunction5() {
+        var i=0,x="";
+        cars=["BWM","Volvo","Saab","Ford"];
+        while(i<cars.length)
+        {
+            x=x+cars[i]+"<br>"
+            i++;
+        }
+        document.getElementById("demo5").innerHTML=x;
+    }
+</script>
+
+<!--do/while循环-->
+<p>点击按钮，do/while循环汽车类型</p>
+<button onclick="myFunction6()">点击按钮6</button>
+<p id="demo6"></p>
+<script>
+    function myFunction6() {
+        var i=0,x="";
+        cars=["BWM","Volvo","Saab","Ford"];
+        do
+        {
+            x=x+cars[i]+"<br>"
+            i++;
+        }while(i<cars.length);
+        document.getElementById("demo6").innerHTML=x;
+    }
+</script>
+
+<!--break,continue,标签-->
+<p>点击按钮，汽车类型,标签引用，break和continue语句的应用</p>
+<button onclick="myFunction7()">点击按钮7</button>
+<p id="demo7"></p>
+<script>
+    function myFunction7() {
+        var i=0,x="";
+        cars=["BWM","Volvo","Saab","Ford"];
+        list:
+        {
+            for(i=0;i<4;i++) {
+
+                if(i==0) continue;
+                if(i==3) break;
+                x=x+cars[i]+"<br>";
+            }
+        }
+        document.getElementById("demo7").innerHTML=x;
+    }
+</script>
+
+<!--try-throw-catch语句-->
+<p>请输入一个5到10之间的数字：</p>
+<input type="text" id="demo8">
+<button type="button" onclick="myFunction8()">测试输入值</button>
+<p id="mess"></p>
+<script>
+    function myFunction8() {
+        try {
+            var x=document.getElementById("demo8").value;
+            if(x=="") throw "值为空";
+            if(x<5) throw "值太小";
+            if(x>10) throw "值太大";
+            if(isNaN(x)) throw "不是数字";
+        }
+        catch (e) {
+            var y=document.getElementById("mess").innerHTML="错误："+e;
+        }
+    }
+</script>
+
+<!--表单验证-->
+<p>JavaScript 可用来在数据被送往服务器前对 HTML 表单中的这些输入数据进行验证。 被 JavaScript 验证的这些典型的表单数据有：</p>
+<ul>
+    <li>用户是否已填写表单中的必填项目？</li>
+    <li>用户输入的邮件地址是否合法？</li>
+    <li>用户是否已输入合法的日期？</li>
+    <li>用户是否在数字域中输入了文本？</li>
+</ul>
+<h3>1、必填或必选项目</h3>
+<script>
+    //判断必填项目，没填或空返回false，否则返回true
+    function validate_required(field,alerttxt) {
+        with (field) {
+            if(value==null||value=="")
+            {
+                alert(alerttxt);return false;
+            }
+            else{return true;}
+        }
+    }
+
+    function validate_form(thisform) {
+        with (thisform) {
+            if(validate_required(email,"Email must be filled out!")==false)
+            {
+                email.focus();
+                return false;
+            }
+        }
+    }
+</script>
+<form action="html元素属性格式化.html" onsubmit="validate_form(this)" method="post">
+    Email:<input type="text" name="email" size="30">
+    <input type="submit" value="提交">
+</form>
+
+<h3>2、E-mail验证项目</h3>
+<script>
+    function validate_email(field,alerttxt) {
+        with(field)
+        {
+            apos=value.indexOf("@");
+            dotpos=value.lastIndexOf(".")
+            if(apos<1||dotpos-apos<2)
+            {
+                alert(alerttxt);
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    }
+
+    function validate_form1(thisform) {
+        with(thisform)
+        {
+            if(validate_email(email,"Not a valid e-mail address! Input again!")==false)
+            {
+                email.focus();
+                return false;
+            }
+        }
+    }
+</script>
+<form onsubmit="validate_form1(this)">
+    Email:<input type="text" name="email" size="30">
+    <input type="submit" value="提交">
+</form>
+
+<!--显示文本和隐藏文本-->
+<p id="p1">这是一个文本</p>
+<input type="button" value="隐藏文本" onclick="document.getElementById('p1').style.visibility='hidden'"/>
+<input type="button" value="显示文本" onclick="document.getElementById('p1').style.visibility='visible'"/>
+
+<!--JS HTML DOM事件-->
+<p>HTML事件的例子：</p>
+<ul>
+    <li>当用户点击鼠标时</li>
+    <li>当页面加载时</li>
+    <li>当图像已加载时</li>
+    <li>当鼠标移动到元素上时</li>
+    <li>当输入字段被改变时</li>
+    <li>当提交HTML表单时</li>
+    <li>当用户触发按键时</li>
+</ul>
+<h3 onclick="this.innerHTML='谢谢你点击'">当鼠标点击时发生的事件，请点击该文本</h3>
+<script id="h">
+    function fun(id) {
+        id.innerHTML="谢谢你点击我";
+    }
+</script>
+<h3 onclick="fun(this)">调用函数触发事件，请点击该文本</h3>
+<!--使用HTML DOM来分配事件-->
+<button id="btn">点击按钮</button>
+<script>
+    document.getElementById("btn").onclick=function () {
+        displaydate();
+    }
+    function displaydate() {
+        document.getElementById("demo").innerHTML=Date();
+    }
+</script>
+<p id="demo"></p>
+<!--更改style属性-->
+<p id="hello">hello world</p>
+<script>
+    document.getElementById("hello").style.color="red";
+</script>
+
+<!--onload和onunload事件-->
+<p>onload事件：提示框会提示浏览器是否启用cookie（navigator.cookieEnabled==true）</p>
+<script>
+    function checkCookies() {
+        if(navigator.cookieEnabled==true)
+        {
+            alert("已启用cookie")
+        }
+        else
+        {
+            alert("未启用cookie")
+        }
+    }
+</script>
+
+<!--onchange事件-->
+<p>onchange事件常结合对输入字段的验证来使用，当用户改变输入字段的内容时，会调用 upperCase() 函数</p>
+<script>
+    function myFunction9() {
+        var x=document.getElementById("fname");
+        x.value=x.value.toUpperCase();
+    }
+</script>
+<p>请输入英文字符：<input type="text" id="fname" onchange="myFunction9()"></p>
+<p>当离开输入字段时，会触发将文本转换为大写的函数。</p>
+
+<!--onmouseover和onmouseout事件-->
+<p>onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</p>
+<script>
+    function mover(obj) {
+        obj.innerHTML="我爱你"
+    }
+    function mout(obj) {
+        obj.innerHTML="张傻宝"
+    }
+</script>
+<div onmouseover="mover(this)" onmouseout="mout(this)" style="background-color: darkcyan;width: 120px;height: 30px;padding: 40px;color: antiquewhite;">请点击这里</div>
+
+<!--onmousedown、onmouseup以及onclick事件-->
+<p>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。</p>
+<script>
+    function mdown(obj) {
+        obj.style.backgroundColor="blue";
+        obj.innerHTML="我爱你";
+
+    }
+    function mup(obj) {
+        obj.style.backgroundColor="green";
+        obj.innerHTML="张傻宝";
+    }
+</script>
+<div onmousedown="mdown(this)" onmouseup="mup(this)" style="background-color: green; color: white; width: 90px; height: 20px; padding: 40px; font-size: 15px;">请点击这里</div>
+
+<!--当用户按下鼠标时，更换一副图片-->
+<p>按住鼠标按住图片能更换图片</p>
+<script>
+    function changepictureon() {
+        document.getElementById("picture").src="images/picture.jpg";
+    }
+    function changepictureoff() {
+        document.getElementById("picture").src="images/tupian.jpg";
+    }
+</script>
+<img id="picture" onmousedown="changepictureon()" onmouseup="changepictureoff()" src="images/tupian.jpg" height="400" width="400">
+
+<!--onfocus事件：当输入字段获得焦点时，改变其背景色。-->
+<script>
+    function myfun(x) {
+        x.style.background="yellow";
+    }
+</script>
+<p>请输入英文字符：<input type="text" onfocus="myfun(this)"></p>
+<p>当输入字段获得焦点时，会触发改变背景颜色的函数。</p>
+
+<img src="images/事件句柄1.png" height="600" width="800" alt="事件句柄1"/>
+<img src="images/事件句柄2.png" height="150" width="800" alt="事件句柄2"/>
+<img src="images/鼠标、键盘属性.png" height="550" width="800" alt="事件、键盘属性"/>
+<img src="images/IE属性.png" height="550" width="800" alt="IE属性"/>
+<img src="images/标准Event属性.png" height="450" width="800" alt="标准Event属性"/>
+<img src="images/标准Event方法.png" height="300" width="800" alt="标准Event方法"/>
+
+<!--判断哪个鼠标按钮被点击-->
+<p>在文档中点击鼠标，会有提示框提出你点击了哪个鼠标按键</p>
+<script type="text/javascript">
+    //判断哪个鼠标按钮被点击
+    function whichButton(event) {
+        var btnnum=event.button;
+        if(btnnum==2)
+        {
+            alert("您点击了鼠标右键");
+        }
+        else if(btnnum==0)
+        {
+            alert("您点击了鼠标左键");
+        }
+        else if(btnnum==1)
+        {
+            alert("您点击了鼠标中键");
+        }
+        else
+        {
+            alert("您点击了"+btnnum+"号键，我不能确定它的名称。");
+        }
+    }
+    //判断鼠标指针的X,Y坐标
+    function show_coords(event) {
+        var x=event.clientX;
+        var y=event.clientY;
+        alert("X坐标："+x+"，Y坐标："+y);
+    }
+    //判断指针相对于屏幕的X,Y坐标
+    function coordinates(event) {
+        var x=event.screenX;
+        var y=event.screenY;
+        alert("X="+x+" Y="+y);
+    }
+    //判断被按的的按键的unicode
+    function whichbtn(event) {
+        alert("该键的Unicode是："+event.keyCode)
+    }
+    //判断哪个元素被点击了
+    function whichelement(e) {
+        var targ;
+        if(!e) var e=window.event;
+        if(e.target) targ=e.target;
+        else if(e.srcElement) targ=e.srcElement;
+        if(targ.nodeType==3) targ=targ.parentNode;
+        var tname=targ.tagName;
+        alert("你点击的元素是："+tname);
+    }
+    //判断哪个事件类型发生
+    function geteventtype() {
+        alert("事件类型为："+event.type);
+    }
+</script>
+
+<!--添加和删除节点（HTML元素）-->
+<h3>创建新的HTML元素：</h3>
+<p>首先创建该元素（元素节点），然后向一个已存在的元素追加该元素</p>
+<div id="div1">
+    <p>这是一个段落</p>
+    <p>这是另一个段落</p>
+</div>
+<script>
+    var para=document.createElement("p");//创建新的元素para
+    var node=document.createTextNode("这是新添加的段落。");//创建文本节点node
+    para.appendChild(node);//向添加的元素para追加这个文本节点node
+    var element=document.getElementById("div1");//找到一个已有的元素
+    element.appendChild(para);//向这个已有的元素追加新元素
+</script>
+
+<h3>删除已有的HTML元素</h3>
+<p>如需删除 HTML 元素，您必须首先获得该元素的父元素：</p>
+<div id="div2">
+    <p id="pa1">这是一个段落</p>
+    <p id="pa2">这是另一个段落</p>
+</div>
+<script>
+    var parent=document.getElementById("div2");//找到父元素div2
+    var child=document.getElementById("pa1");//找到要删除的子元素pa1
+    parent.removeChild(child);//从父元素div2中删除子元素pa1
+</script>
+<a href="http://www.w3school.com.cn/htmldom/index.asp">完整的HTML DOM教程</a><br/>
+
+
+</body>
+</html>

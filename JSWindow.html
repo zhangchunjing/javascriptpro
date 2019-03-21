@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Window</title>
+</head>
+<body onload="checkCookie()">
+<!--JS Window 浏览器对象模型-->
+<h3>Window对象</h3>
+<p>
+    所有浏览器都支持 window 对象。它表示浏览器窗口。<br/>
+    所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。<br/>
+    全局变量是 window 对象的属性。<br/>
+    全局函数是 window 对象的方法。<br/>
+</p>
+<h3>Window尺寸</h3>
+<p>
+    有三种方法能够确定浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）。<br/>
+    对于Internet Explorer、Chrome、Firefox、Opera 以及 Safari：<br/>
+    window.innerHeight - 浏览器窗口的内部高度<br/>
+    window.innerWidth - 浏览器窗口的内部宽度<br/>
+    对于 Internet Explorer 8、7、6、5：<br/>
+    document.documentElement.clientHeight<br/>
+    document.documentElement.clientWidth<br/>
+    或者:<br/>
+    document.body.clientHeight<br/>
+    document.body.clientWidth<br/>
+</p>
+<p id="demo"></p>
+<script>
+    var h=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+    var w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+    document.getElementById("demo").innerHTML="浏览器内部窗口高度："+h+"，宽度："+w;
+</script>
+<h3>其他Window方法</h3>
+<ul>
+    <li>window.open() 打开新窗口</li>
+    <li>window.close() 关闭当前窗口</li>
+    <li>window.moveTo() 移动当前窗口</li>
+    <li>window.resizeTo() 调整当前窗口的尺寸</li>
+</ul>
+<!--JS Screen-->
+<h3>Window Screen</h3>
+<p>
+    window.screen 对象在编写时可以不使用 window 这个前缀。<br/>
+    screen.availWidth - 可用的屏幕宽度<br/>
+    screen.availHeight - 可用的屏幕高度<br/>
+</p>
+<script>
+    document.write("可用高度："+screen.availHeight+"<br/>");
+    document.write("可用宽度："+screen.availWidth+"<br/>");
+</script>
+<!--Window Location-->
+<h3>Window Location</h3>
+<p>
+    window.location 对象在编写时可不使用 window 这个前缀。<br/>
+    location.hostname 返回 web 主机的域名<br/>
+    location.pathname 返回当前页面的路径和文件名<br/>
+    location.port 返回 web 主机的端口 （80 或 443）<br/>
+    location.protocol 返回所使用的 web 协议（http:// 或 https://）<br/>
+    location.href返回当前页面的URL<br/>
+    location.assign()方法加载新的文档<br/>
+</p>
+<script>
+    document.write("地址URL："+location.href+"<br/>");
+    document.write("路径名："+location.pathname+"<br/>");
+    function newDoc() {
+        window.location.assign("http://www.w3school.com.cn/js/js_window_location.asp");
+    }
+</script><br/>
+<input type="button" value="加载新文档" onclick="newDoc()">
+<!--Window History-->
+<h3>Window History</h3>
+<p>
+    history.back() - 与在浏览器点击后退按钮相同<br/>
+    history.forward() - 与在浏览器中点击按钮向前相同<br/>
+</p>
+<script>
+    //加载历史列表中的前一个URL
+    function goback() {
+        window.history.back()
+    }
+    //加载历史列表中的下一个URL
+    function forward() {
+        window.history.forward()
+    }
+</script>
+<input type="button" value="返回上一页" onclick="goback()">
+<input type="button" value="下一页" onclick="forward()"><br/>
+<!--JS消息框-->
+<h3>警告框</h3>
+<input type="button" value="警告框" onclick="alert('这是一个警告框！')"><br/>
+<h3>带有折行的警告框</h3>
+<input type="button" value="折行警告框" onclick="alert('这是一个带有'+'\n'+'折行的警告框！')"><br/>
+<h3>确认框</h3>
+<script>
+    function conf() {
+        var r=confirm("这是一个确认框");
+        if(r==true)
+        {
+            alert("你点击了确认")
+        }
+        else
+        {
+            alert("你点击了取消")
+        }
+    }
+</script>
+<input type="button" value="确认框" onclick="conf()"><br/>
+<h3>提示框</h3>
+<script>
+    function prom() {
+        var name=prompt("请输入你的名字","Bill Gates")
+        if((name!=null)&&(name!=""))
+        {
+            document.getElementById("pr").innerHTML=("你好"+name+"今天怎么样了")
+        }
+    }
+</script>
+<input type="button" value="提示框" onclick="prom()"><br/>
+<p id="pr"></p>
+<!--JS计时 在某个时间间隔之后执行某个代码-->
+<h3>简单的计时</h3>
+<script>
+    function time() {
+        var t=setTimeout("alert('5s时间到')",5000)
+    }
+</script>
+<input type="button" value="定时的警告框" onclick="time()">
+<p>点击按钮后，5s后会弹出警告框</p>
+<h3>另一个简单的计时</h3>
+<script>
+    function timeText() {
+        var t1=setTimeout("document.getElementById('txt').value='2秒'",2000);
+        var t2=setTimeout("document.getElementById('txt').value='4秒'",4000);
+        var t3=setTimeout("document.getElementById('txt').value='6秒'",6000);
+    }
+</script>
+<form>
+    <input type="button" value="显示文本" onclick="timeText()">
+    <input type="text" id="txt">
+</form>
+<h3>在一个无穷循环中的计时事件</h3>
+<script>
+    var c=0;
+    var t;
+    function timecount() {
+        document.getElementById("ti").value=c;
+        c=c+1;
+        t=setTimeout("timecount()",1000);
+    }
+</script>
+<form>
+    <input type="button" onclick="timecount()" value="开始计时">
+    <input type="text" id="ti">
+</form>
+<h3>带有停止按钮的无穷循环中的计时事件</h3>
+<script>
+    var c=0;
+    var t;
+    function timecount1() {
+        document.getElementById("t").value=c;
+        c=c+1;
+        t=setTimeout("timecount1()",1000);
+    }
+    function stopcount() {
+        c=0;
+        setTimeout("document.getElementById('t').value=0",0);
+        clearTimeout(t);
+    }
+</script>
+<form>
+    <input type="button" onclick="timecount1()" value="开始计时">
+    <input type="text" id="t">
+    <input type="button" onclick="stopcount()" value="停止计时">
+</form>
+<h3>setTimeout()方法：未来某时执行代码<br/>clearTimeout()方法：取消setTimeout()</h3>
+<!--JS Cookies-->
+<h3>JS Cookies：用来识别用户</h3>
+<h3>创建一个欢迎cookie：</h3>
+<p>利用用户在提示框中输入的数据创建一个 JavaScript Cookie，当该用户再次访问该页面时，根据 cookie 中的信息发出欢迎信息。</p>
+<script>
+    //检查是否已设置cookie
+    function getCookie(c_name) {
+        if(document.cookie.length>0)//检查document.cookie对象中是否存有cookie
+        {
+            c_start=document.cookie.indexOf(c_name+"=");
+            if(c_start!=-1)//假如 document.cookie 对象存有某些 cookie，那么会继续检查我们指定的 cookie 是否已储存。如果找到了我们要的 cookie，就返回值，否则返回空字符串。
+            {
+                c_start=c_start+c_name.length+1;
+                c_end=document.cookie.indexOf(";",c_start)
+                if(c_end==-1)
+                    c_end=document.cookie.length;
+                return unescape(document.cookie.substring(c_start,c_end));
+            }
+        }
+        return "";
+    }
+    //创建和存储cookie，创建一个可在cookie变量中存储访问者姓名的函数，该函数的参数存有cookie的名称、值以及过期天数
+    function setCookie(c_name,value,expiredays) {
+        var exdate=new Date();
+        exdate.setDate(exdate.getDate()+expiredays);//将天数转换为有效的日期
+        document.cookie=c_name+"="+escape(value)+((expiredays==null)?"":";expires="+exdate.toGMTString())//将cookie名称、值以及过期天数存储于document.cookie对象中
+    }
+    //如果 cookie 已设置，则显示欢迎词，否则显示提示框来要求用户输入名字。
+    function checkCookie() {
+        username=getCookie('username');
+        if(username!=null&&username!="")
+        {
+            alert('Welcome again '+username+'!')
+        }
+        else
+        {
+            username=prompt('Please enter your name:',"");
+            if(username!=null&&username!="")
+            {
+                setCookie('username',username,365)
+            }
+        }
+    }
+</script>
+<h3>什么是cookie:</h3>
+<p>cookie 是存储于访问者的计算机中的变量。每当同一台计算机通过浏览器请求某个页面时，就会发送这个 cookie。你可以使用 JavaScript 来创建和取回 cookie 的值。</p>
+
+
+
+</body>
+</html>

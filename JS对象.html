@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h3{color: brown}
+    </style>
+</head>
+<body onload="getTime()">
+<!--对象-->
+<h3>创建对象</h3>
+<!--1.直接创建-->
+<script>
+    /*
+    person=new Object();
+    person.firstname="Bill";
+    person.lastname="Gates";
+    person.age=56;
+    person.sex="boy";
+    */
+    person={firstname:"Bill",lastname:"Gates",age:56,sex:"boy"};//使用对象literals
+    document.write(person.firstname+" "+person.lastname+" "+person.age+" "+person.sex);
+</script><br/>
+<!--2.使用对象构造器-->
+<script>
+    function person(firstname,lastname,age,sex) {
+        this.firstname=firstname;
+        this.lastname=lastname;
+        this.age=age;
+        this.sex=sex;
+    }
+    myfather=new person("Bill","Gates",56,"boy");
+    document.write(myfather.firstname+" "+myfather.lastname+" "+myfather.age+" "+myfather.sex);
+</script><br/>
+<!--将方法添加到JS对象中-->
+<script>
+    function person(firstname,lastname,age,sex) {
+        this.firstname=firstname;
+        this.lastname=lastname;
+        this.age=age;
+        this.sex=sex;
+
+        this.changename=changename;
+        function changename(name) {
+            this.lastname=name;
+        }
+    }
+    myfather=new person("Bill","Gates",56,"boy");
+    myfather.changename("Billerm");
+    document.write(myfather.firstname+" "+myfather.lastname+" "+myfather.age+" "+myfather.sex);
+</script>
+
+<!--数字-->
+<h3>八进制和十六进制</h3>
+<p>如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0 和 "x"，则解释为十六进制数。</p>
+<img src="images/数字的属性和方法.png" height="400" width="400" alt="数字的属性和方法"/><br/>
+<a href="http://www.w3school.com.cn/jsref/jsref_obj_number.asp">完整的Number对象参考手册</a>
+
+<!--JS字符串-->
+<h3>计算字符串的长度：</h3>
+<script>
+    var txt="Hello World!";
+    document.write("该字符串的长度为："+txt.length);
+</script>
+<h3>为字符串添加样式：</h3>
+<script>
+    var txt="Hello World!"
+    document.write("Big:"+txt.big()+"<br>");
+    document.write("<p>Small: " + txt.small() + "</p>")
+
+    document.write("<p>Bold: " + txt.bold() + "</p>")
+    document.write("<p>Italic: " + txt.italics() + "</p>")
+
+    document.write("<p>Blink: " + txt.blink() + " (does not work in IE)</p>")
+    document.write("<p>Fixed: " + txt.fixed() + "</p>")
+    document.write("<p>Strike: " + txt.strike() + "</p>")
+
+    document.write("<p>Fontcolor: " + txt.fontcolor("Red") + "</p>")
+    document.write("<p>Fontsize: " + txt.fontsize(16) + "</p>")
+
+    document.write("<p>Lowercase: " + txt.toLowerCase() + "</p>")
+    document.write("<p>Uppercase: " + txt.toUpperCase() + "</p>")
+
+    document.write("<p>Subscript: " + txt.sub() + "</p>")
+    document.write("<p>Superscript: " + txt.sup() + "</p>")
+    document.write("<p>Link:"+txt.link("http://www.w3school.com.cn/js/js_obj_string.asp")+"</p>");
+</script>
+<h3>indexOf()方法：来定位字符串中某一个指定的字符首次出现的位置</h3>
+<script>
+    var txt="Hello World!";
+    document.write(txt+"<br>");
+    document.write("第一个l的位置："+txt.indexOf("l")+"<br>");
+    document.write("World的位置："+txt.indexOf("World")+"<br>");
+    document.write("world的位置："+txt.indexOf("world")+"<br>")//不存在则返回-1
+</script>
+<h3>match()方法：查找字符串中特定的字符，如果找到则返回这个字符</h3>
+<script>
+    var txt="Hello World!";
+    document.write(txt+"<br>");
+    document.write(txt.match("world")+"<br>");//不存在则返回null
+    document.write(txt.match("W")+"<br>");
+    document.write(txt.match("World")+"<br>");
+</script>
+<h3>replace方法：替换字符串中的字符</h3>
+<script>
+    var txt="Hello World!"
+    document.write(txt.replace("World","张傻宝"));
+</script><br/>
+<a href="http://www.w3school.com.cn/jsref/jsref_obj_string.asp">完整的JS String对象参考手册</a><br/>
+
+<!--JS日期-->
+<h3>返回当日的日期和时间:Date()</h3>
+<script>
+    document.write(Date());
+</script>
+<h3>返回从1970年1月1日至今的毫秒数:getTime()</h3>
+<script>
+    var day=new Date();
+    document.write("从1970/1/1至今已过去"+day.getTime()+"毫秒");
+</script>
+<h3>设置具体的日期：setFullYear</h3>
+<script>
+    var d=new Date();
+    d.setFullYear(1998,12,2);
+    document.write(d);
+</script>
+<h3>将当日的日期（根据UTC）转换为字符串</h3>
+<script>
+    var d=new Date();
+    document.write(d.toUTCString());
+</script>
+<h3>使用getDay()和数组来显示星期，而不仅仅是数字</h3>
+<script>
+    var d=new Date();
+    var weekday=new Array(7);
+    weekday[0]="星期日";
+    weekday[1]="星期一";
+    weekday[2]="星期二";
+    weekday[3]="星期三";
+    weekday[4]="星期四";
+    weekday[5]="星期五";
+    weekday[6]="星期六";
+    document.write("今天是"+weekday[d.getDay()]);
+</script>
+<h3>显示一个钟表</h3>
+<div id="dy"></div>
+<script type="text/javascript">
+    function getTime() {
+        var d=new Date();
+        var h=d.getHours();
+        var m=d.getMinutes();
+        var s=d.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById("dy").innerHTML=h+":"+m+":"+s+"<br>";
+        var t=setTimeout('getTime()',500);
+    }
+    function checkTime(i) {
+        if(i<10)
+        {
+            i="0"+i;
+            return i;
+        }
+        else
+        {
+            return i;
+        }
+    }
+</script>
+<h3>操作日期</h3>
+<div id="dm"></div>
+<script>
+    var d=new Date();
+    d.setFullYear(1998,11,2);
+    document.getElementById("dm").innerHTML="设置的时间为："+d;
+    d.setDate(d.getDate()+10);//表示月份的参数介于0-11之间
+    document.write("增加后的时间为："+d);
+</script>
+<p><a href="http://www.w3school.com.cn/jsref/jsref_obj_date.asp">完整的Date对象参考手册</a> </p>
+
+<!--数组对象Array-->
+<h3>创建数组：for/in声明来循环输出数组中的元素</h3>
+<script>
+    var mycars=new Array();
+    mycars[0]="Saab";
+    mycars[1]="Volvo";
+    mycars[2]="BWM";
+    for(i=0;i<mycars.length;i++)
+    {
+        document.write(mycars[i]+"<br/>")
+    }
+    for(i in mycars)
+    {
+        document.write(mycars[i]+"<br/>")
+    }
+</script>
+<h3>合并两个数组：concat()方法</h3>
+<script>
+    var mycars=new Array();
+    mycars[0]="Saab";
+    mycars[1]="Volvo";
+    mycars[2]="BWM";
+    var mycars2=new Array();
+    mycars2[0]="Hla";
+    mycars2[1]="Fklh";
+    mycars=mycars.concat(mycars2);
+    document.write("合并后："+"<br/>")
+    for(i in mycars)
+    {
+        document.write(mycars[i]+"<br/>")
+    }
+</script>
+<h3>用数组元素组成字符串：join()方法</h3>
+<script>
+    var mycars=new Array();
+    mycars[0]="Saab";
+    mycars[1]="Volvo";
+    mycars[2]="BWM";
+    document.write(mycars.join()+"<br/>")
+    document.write(mycars.join("."));
+</script>
+<h3>数组排序：sort()方法（文字排序、数值排序都可以）</h3>
+<script>
+    var mycars=new Array();
+    mycars[0]="Saab";
+    mycars[1]="Volvo";
+    mycars[2]="BWM";
+    document.write("排序前：")
+    for(i=0;i<mycars.length;i++)
+    {
+        document.write(mycars[i]+" ")
+    }
+    document.write("<br/>")
+    document.write("排序后："+mycars.sort()+"<br/>");
+    //数值排序
+    function sortNumber(a, b)
+    {
+        return a - b
+    }
+    var arr = new Array(6)
+    arr[0] = "10"
+    arr[1] = "5"
+    arr[2] = "40"
+    arr[3] = "25"
+    arr[4] = "1000"
+    arr[5] = "1"
+    document.write("排序前："+arr + "<br />")
+    document.write("排序后："+arr.sort(sortNumber)+"<br/>")
+</script>
+<p><a href="http://www.w3school.com.cn/jsref/jsref_obj_array.asp">完整的Array对象参考手册</a> </p>
+
+<!--JS逻辑-->
+<p><a href="http://www.w3school.com.cn/jsref/jsref_obj_boolean.asp">完整的Boolean对象参考手册</a> </p>
+
+<!--JS Math(算数)对象-->
+<h3>四舍五入保留到整数：round()方法</h3>
+<script>
+    document.write(Math.round(-468.68)+"<br/>");
+    document.write(Math.round(0.60) + "<br />");
+    document.write(Math.round(11.2345) + "<br />");
+    document.write(Math.round(0.49) + "<br />");
+    document.write(Math.round(-4.40) + "<br />");
+    document.write(Math.round(-4.60)+"<br/>");
+</script>
+<h3>使用0-1之间的随机数：random()</h3>
+<script>
+    document.write(Math.random());
+</script>
+<h3>使用0-10之间的随机数:floor()方法和random()方法</h3>
+<script>
+    document.write(Math.floor(Math.random()*11));
+</script>
+<h3>两个数中较大的数：max() 两个数中较小的数：min()</h3>
+<script>
+    document.write("较大的是："+Math.max(22,13.34)+"<br/>");
+    document.write("较小的是："+Math.min(22,13.34)+"<br/>");
+</script>
+<img src="images/算数值.png" height="550" width="550" alt="算数值"/>
+<p><a href="http://www.w3school.com.cn/jsref/jsref_obj_math.asp">完整的Math对象参考手册</a> </p>
+
+<!--正则表达式RegExp对象-->
+<h3>什么是RegExp</h3>
+<p>
+    RegExp 是正则表达式的缩写。<br/>
+    当您检索某个文本时，可以使用一种模式来描述要检索的内容。RegExp 就是这种模式。<br/>
+    简单的模式可以是一个单独的字符。<br/>
+    更复杂的模式包括了更多的字符，并可用于解析、格式检查、替换等等。<br/>
+    您可以规定字符串中的检索位置，以及要检索的字符类型，等等。<br/>
+</p>
+<h3>RegExp对象有3个方法：text()、exec()、compile()</h3>
+<h3>test()方法：检索字符串中的指定值，返回true或false</h3>
+<script>
+    var s="Hello everyone my name is John."
+    var a=new RegExp("e");
+    var t=new RegExp("t");
+    document.write(a.test(s)+"<br/>");
+    document.write(t.test(s)+"<br/>");
+</script>
+<h3>exec()方法：检索字符串中的指定值，返回是被找到的值，如果没有则返回null</h3>
+<script>
+    var s="Hello everyone my name is John."
+    var a=new RegExp("ev");
+    var t=new RegExp("t");
+    var e=new RegExp("e","g");//找到所有的，会存储位置
+    document.write(a.exec(s)+"<br/>");//找到一个
+    document.write(t.exec(s)+"<br/>");
+    do {
+        var result=e.exec(s);
+        document.write(result+" ");
+    }while (result!=null)
+</script>
+<h3>compile()方法：用于改变RegExp，既可以改变检索模式，也可以添加或删除第二个参数。</h3>
+<script>
+    var s="Hello everyone my name is John."
+    var a=new RegExp("e");
+    //var t=new RegExp("t");
+    document.write(a.test(s)+"<br/>");
+    a.compile("t");//更改为"t"
+    document.write(a.test(s)+"<br/>");
+</script>
+<p><a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp">完整的RegExp对象参考手册</a> </p>
+
+</body>
+</html>

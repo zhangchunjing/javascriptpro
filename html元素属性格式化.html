@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        h1{color: brown;size: 30px}
+    </style>
+    <style>
+        .cities{
+            background-color: darkcyan;
+            color: white;
+            margin: 30px;
+            padding: 20px;
+        }
+    </style>
+    <style>
+        span.red {color: red;}
+    </style>
+    <!--使用div元素来创建布局-->
+    <style>
+        #header{
+            background-color: darkcyan;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        #nav{
+            line-height: 40px;
+            background-color: antiquewhite;
+            height: 300px;
+            width: 100px;
+            float: left;
+            padding: 10px;
+        }
+        #section{
+            width: 1000px;
+            float: left;
+            padding: 20px;
+        }
+        #footer{
+            background-color: darkcyan;
+            color: white;clear: both;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <!--使用HTML5的网站布局-->
+    <style>
+        header{
+            background-color: darkcyan;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        nav{
+            line-height: 40px;
+            background-color: antiquewhite;
+            height: 300px;
+            width: 100px;
+            float: left;
+            padding: 10px;
+        }
+        section{
+            width: 1000px;
+            float: left;
+            padding: 20px;
+        }
+        footer{
+            background-color: darkcyan;
+            color: white;clear: both;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <!--使用table布局-->
+    <style>
+        table.lamp{
+            width: 600px;
+            border: 1px solid #d4d4d4;
+        }
+        table.lamp th,td{
+            padding: 20px;
+        }
+        table.lamp td{
+            width: 400px;
+            color: blueviolet;
+        }
+    </style>
+    <!--创建自己的响应式框架-->
+    <style>
+        .city{
+            float: left;
+            margin: 10px;
+            padding: 20px;
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+    <!--使用Bootstrap创建响应式框架-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet"
+    href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--内部样式表
+    <style type="text/css">
+        body {background-color: red}
+        p {margin-left: 20px}
+    </style>
+    -->
+
+<!--
+<p>标识当前段落
+<a>用来添加超链接
+<br/>是用来换行的
+-->
+<body background="https://sc-f1.sc946.com/view/20180901/4000148/74493/e1733a9b24459d74a56b9d1890cda30a.jpg!r800x800.jpg">
+    <a name="tips" style="color: brown">注意</a>
+    <p>html标题是通过&lt;h1&gt;-&lt;h6&gt;等标签进行定义的&lt;h1;&gt;字越大，&lt;h6&gt;字越小</p><br/>
+    <p>html段落是通过&lt;p&gt;标签来进行定义的</p><br/>
+    <p>html链接是通过&lt;a&gt;标签进行定义的，href属性中指定链接地址&lt;a href&gt;</p><br/>
+    <p>html图像是通过&lt;img&gt;标签进行定义的</p><br/>
+    <p>&lt;hr&gt;标签是在HTML页面中创建水平线。</p><br/>
+<hr/>
+    <h1>tittle1</h1>
+    <h2>tittle2</h2>
+    <h3>tittle3</h3>
+    <h4>tittle4</h4>
+    <h5>tittle5</h5>
+    <h6>tittle6</h6>
+    <a href="http://www.w3school.com.cn/html/html_basic.asp">基本的HTML标签四个实例</a><br/>
+    <img src="images/picture.jpg"height="200"width="300"><br/>
+    <a href="http://www.w3school.com.cn/tags/index.asp">完整的HTML参考手册</a><br/>
+    <a href="http://www.w3school.com.cn/tags/html_ref_standardattributes.asp">HTML标准属性参考手册</a>
+<hr/>
+    <p>一些标签的含义<br/>
+        <img src="images/标签.png" height="200" width="800" align="center"><br/>
+    </p>
+    <p>
+        <img src="images/标签1.png" height="100" width="800" align="center"><br/>
+    </p>
+    <p style="text-align: left">如果不希望重新开以段落就换行<br/>可以在段落中使用&lt;br&gt;标签</p>
+    <!--当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML 代码中的所有连续的空行（换行）也被显示为一个空格。-->
+    <hr/>
+    <p>style 属性用于改变 HTML 元素的样式。</p>
+
+    <h3 style="font-family: 'Arial Black';color: crimson;" >避免使用下面这些属性和标签，请用style样式替换</h3>
+    <p style="font-family: 'Arial Black';color: crimson;font-size: 15px";>
+        <img src="images/标签2.png" height="250" width="800";><br/>
+        background-color 属性为元素定义了背景颜色,style 属性淘汰了“旧的” bgcolor 属性。<br/>
+        font-family、color 以及 font-size 属性分别定义元素中文本的字体系列、颜色和字体尺寸,style 属性淘汰了旧的 &lt;font&gt; 标签。<br/>
+        text-align 属性规定了元素中文本的水平对齐方式,style 属性淘汰了旧的 "align" 属性。<br/>
+    </p>
+<hr/>
+    <p>使用&lt;pre&gt;标签保留空格和换行
+        <pre>
+        例题：
+        int x=3;
+        for(int i=0;i<10;i++)
+        {
+            x=x+i;
+        }
+        print x;
+    </pre>
+    </p>
+    <a name="CODE">显示计算机/编程代码的标签</a>
+    <p>
+        这些标签用于显示计算机/编程代码<br/>
+        <code>Computer code</code>
+        <br />
+        <kbd>Keyboard input</kbd>
+        <br />
+        <tt>Teletype text</tt>
+        <br />
+        <samp>Sample text</samp>
+        <br />
+        <var>Computer variable</var>
+        <br />
+    </p>
+<hr/>
+    <!--如何在html文件中写地址-->
+    <p style="color: brown">如何在html文件中写地址信息:</p>
+    <address>
+        Written by <a href="mailto:1257127742@qq.com">email</a><br/>
+        called us 1681279966<br/>
+
+    </address>
+<hr/>
+    <p style="color: brown">如何实现缩写和首字母缩写：&lt;abbr&gt;标签&lt;acronym&gt;标签</p>
+    <abbr title="address">add.</abbr><br/>
+    <acronym title="World Wide Web">WWW.</acronym><br/>
+    <p>在某些浏览器中，当您把鼠标移至缩略词语上时，title 可用于展示表达的完整版本。</p>
+    <p>仅对于 IE 5 中的 acronym 元素有效。</p>
+    <p>对于 Netscape 6.2 中的 abbr 和 acronym 元素都有效。</p>
+<hr/>
+    <p style="color: brown">如何改变文字的方向：&lt;bdo&gt;标签</p>
+    <bdo dir="rtl">HAPPY BIRTHDAY TO 傻宝</bdo><br/>
+    <bdo dir="ltr">HAPPY BIRTHDAY TO 傻宝</bdo>
+</body>
+<hr/>
+    <p style="color: brown">块引用：如何实现长短不一的引用语</p>
+    <p style="color: brown">这是长引用：&lt;blockquote&gt;标签，浏览器会加入换行和边距</p>
+    <blockquote>这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用，
+        这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用，这是长的引用。
+    </blockquote><br/>
+    <p style="color: brown">这是短引用：&lt;q&gt;标签，浏览器不会有特殊呈现</p>
+    <q>这是短引用</q><br/>
+<hr/>
+    <p style="color: brown">如何标记删除文本：&lt;del&gt;标签，和插入文本&lt;ins&gt;标签</p>
+    <p>张傻宝今天在我这里<del>偷吃</del>了<ins>一瓶酸奶</ins></p>
+<hr/>
+    <img src="images/文本格式化标签.png" height="400" width="800"><br/>
+    <img src="images/计算机输出标签.png" height="300" width="800"><br/>
+    <img src="images/引用标签.png" height="300" width="800"><br/>
+<hr/>
+
+    <p style="color: brown">如何使用添加到 &lt;head&gt; 部分的样式信息对 HTML 进行格式化。在head中添加&lt;style type="text/css"&gt;</p>
+    <h1>这是示例</h1>
+    <p style="color: brown">如何使用样式做一个没有下划线的链接</p>
+    <a href="http://www.w3school.com.cn/tiy/t.asp?f=html_linknoline" style="text-decoration: none">这是一个没有下划线的链接</a><br/>
+    <p>如何使用&lt;link&gt;标签链接到一个外部样式表</p>
+    <p style="color: brown; margin-left: 20px;font-size: 20px">这是内联样式</p>
+    <p style="color: brown">样式标签：</p>
+    <img src="images/样式标签.png" height="250" width="700"><br/>
+    <p><a href="http://www.w3school.com.cn/css/index.asp">更多CSS教程</a></p>
+<hr/>
+    <p style="color: brown">如何在HTML文档中创建超链接：</p>
+    <p><a href="JS编写位置.html">本文本</a>是一个指向本网站中的一个页面链接</p>
+    <p><a href="http://www.w3school.com.cn/tiy/t.asp?f=html_links">本文本</a>是一个指向万维网上的一个页面链接</p>
+    <p style="color: brown">如何将图像作为链接：&lt;a href&gt;&lt;img&gt;&lt;/a&gt;点击图片能跳到另一个网页 target=_blank能使超链接在另一个页面打开</p>
+    <p>
+        <a href="JS编写位置.html">
+            <img border="0" src="images/picture.jpg" height="250" width="400"/>
+        </a>
+        <a href="http://www.w3school.com.cn/html/html_links.asp" target="_blank">
+            <img border="0" src="images/picture.jpg" height="250" width="400"/>
+        </a>
+    </p>
+    <a href="#tips">提示</a>
+    <a href="http://localhost:63342/javascriptpro/html%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E6%A0%BC%E5%BC%8F%E5%8C%96.html?_ijt=adhhe2s8nijkdjt2r481njgai9#tips">有用的提示</a>
+    <p style="color: brown">
+        &lt;a name&gt;用来定义瞄
+        我们将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到 tips 这个命名锚了。<br/>
+        命名锚经常用于在大型文档开始位置上创建目录。可以为每个章节赋予一个命名锚，然后把链接到这些锚的链接放到文档的上部。<br/>
+        假如浏览器找不到已定义的命名锚，那么就会定位到文档的顶端。不会有错误发生。
+    </p>
+    <a href="#CODE">查看用于显示计算机/编程代码的标签</a><br/>
+    <p style="color: brown">
+        当你的页面被固定在框架之内，使用target="_top"可以跳出框架。
+        <a href="JS编写位置.html" target="_top">请点击这里</a>
+    </p>
+    <p style="color: brown">
+        邮件的链接：
+        <a href="mailto:someone@qq.com?subject=Hello%20again张宝贝">发送邮件</a><br/>
+        注意：使用%20来替换单词之间的空格，这样浏览器就可以正确的显示文本了。
+    </p>
+    <p style="color: brown">
+        另一个邮件链接，cc是抄送，bcc是密件抄送。中间用&连接
+        <a href="mailto:someone@microsoft.com?cc=someoneelse@microsoft.com&bcc=andsomeoneelse2@microsoft.com&subject=Hello%20everyone%20Nice%20to%20meet%20you.&body=张傻宝">发送邮件</a>
+    </p>
+<hr/>
+    <p>插入网页中的图片，动态图语法一样</p>
+    <img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=e3357ba3df62853596e0d523a0ee76f2/fc1f4134970a304e5d7aa1abdbc8a786c9175c02.jpg" alt="团子" /><br/>
+    <p>如何在文字中排列图片：</p>
+    <p>未设置对齐方式的图像<img src="images/picture.jpg" height="100" width="200">在文本中 </p>
+    <p>设置对齐方式align="bottom"的图像<img src="images/picture.jpg" height="100" width="200" align="bottom">在文本中</p>
+    <p>设置对齐方式align="middle"的图像<img src="images/picture.jpg" height="100" width="200" align="middle">在文本中</p>
+    <p>设置对齐方式align="top"的图像<img src="images/picture.jpg" height="100" width="200" align="top">在文本中</p>
+    <p>
+        <img src="images/picture.jpg" height="50" width="100" align="left">
+        带有图像的一个段落。align="left",图像将浮动到文本左侧
+    </p>
+
+    <p>
+        <img src="images/picture.jpg" height="50" width="100" align="right">
+        带有图像的一个段落。align="right",图像将浮动到文本右侧
+    </p>
+<hr/>
+    <p>创建图像映射，如何创建带有可供点击区域的图像地图，其中的每个区域都是一个超级链接。</p>
+    <img src="images/picture.jpg" border="0" usemap="#by" alt="白宇"  height="400" width="800"/>
+    <map name="by" id="by">
+        <area
+        shape="circle"
+        coords="180,139,100"
+        href="images/picture.jpg"
+        target="_blank"
+        alt="zyl"/>
+        <area
+        shape="circle"
+        coords="500,161,100"
+        href="images/picture.jpg"
+        target="_blank"
+        alt="zyl1" />
+        <area
+        shape="rect"
+        coords="0,0,110,260"
+        href="images/picture.jpg"
+        target="_blank"
+        alt="by1">
+    </map>
+    <p><b>注释：</b>
+        img 元素中的 "usemap" 属性引用 map 元素中的 "id" 或 "name" 属性（根据浏览器），
+        所以我们同时向 map 元素添加了 "id" 和 "name" 属性。
+    <pre>&lt;map name=" "  id=" "&gt;&lt;area shape=" " coords=" " href=" " target=" " alt=" "&gt;&lt;/map&gt;</pre>
+    </p>
+    <p>将图像转换为图像映射：</p>
+    <a href="http://www.w3school.com.cn/html/html_images.asp">
+        <img src="images/picture.jpg" ismap width="400" height="200">
+    </a><br/>
+    <img src="images/图像标签.png" height="250" width="600">
+<hr/>
+    <p style="color: brown">如何在html文档中创建表格：表格的表头使用&lt;th&gt;标签进行定义；每个表格由&lt;table&gt;开始，行由&lt;tr&gt;开始，每个表格的数据由&lt;td&gt;开始;border属性指表格的边框，数值越大边框越粗</p>
+    <h4>一列：</h4>
+    <table border="1">
+        <tr>
+            <td>100</td>
+        </tr>
+    </table>
+    <h4>一行三列：</h4>
+    <table border="8" bgcolor="red">
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+    </table>
+    <h4>三行三列:</h4>
+    <table border="15" background="images/picture.jpg" >
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>500</td>
+            <td>600</td>
+        </tr>
+        <tr>
+            <td>700</td>
+            <td>800</td>
+            <td>900</td>
+        </tr>
+    </table><br/>
+    <table border="1">
+        <tr>
+            <td>row 1,cell 1</td>
+            <td>row 1,cell 2</td>
+        </tr>
+        <tr>
+            <td>row 2,cell 1</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table><br/>
+    <h4>表格中的数据是图片：</h4>
+    <table border="5" cellpadding="10" cellspacing="10">
+        <caption>My picture</caption><!--标题-->
+        <th>picture1</th><!--表头-->
+        <th>picture2</th>
+        <tr>
+            <td><img src="images/picture.jpg" width="200" height="100"></td>
+            <td><img src="images/picture.jpg" width="200" height="100"></td>
+        </tr>
+        <tr>
+            <td><img src="images/picture.jpg" width="200" height="100"></td>
+            <td><img src="images/picture.jpg" width="200" height="100"></td>
+        </tr>
+    </table><br/>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th colspan="2">电话</th><!--横跨两列的表格-->
+        </tr>
+        <tr>
+            <td>Bill Gates</td>
+            <td>123 44 234</td>
+            <td>444 55 677</td>
+        </tr>
+    </table><br/>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <td>Bill Gates</td>
+        </tr>
+        <tr>
+            <th rowspan="2">电话</th><!--横跨两行的表格-->
+            <td bgcolor="red">123 44 234</td>
+        </tr>
+        <tr>
+            <td background="images/picture.jpg">444 55 677</td>
+        </tr>
+    </table><br/>
+    <table border="1"><!--如何显示在不同的元素内显示元素，表格内的标签-->
+        <tr>
+            <td>
+                <p>这是一个段落</p>
+                <p>这是另一个段落</p>
+            </td>
+            <td>这个单元包含一个表格：
+                <table border="1">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>这个单元包含一个列表：
+                <u1>
+                    <li>苹果</li>
+                    <li>香蕉</li>
+                    <li>菠萝</li>
+                </u1>
+            </td>
+            <td>HELLO</td>
+        </tr>
+    </table><br/>
+    <table width="400" border="1">
+        <tr>
+            <th align="left">消费项目...</th>
+            <th align="right">一月</th>
+            <th align="right">二月</th>
+        </tr>
+        <tr>
+            <td align="left">衣服</td>
+            <td align="right">$248</td>
+            <td align="right">$58</td>
+        </tr>
+        <tr>
+            <td align="left">化妆品</td>
+            <td align="right">$268</td>
+            <td align="right">$689</td>
+        </tr>
+        <tr>
+            <td align="left">食物</td>
+            <td align="right">$728</td>
+            <td align="right">$589</td>
+        </tr>
+    </table><br/>
+    <h4>frame="box":</h4>
+    <table frame="box">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <h4>frame="above":</h4>
+    <table frame="above">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <h4>frame="below":</h4>
+    <table frame="below">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <h4>frame="hsides":</h4>
+    <table frame="hsides">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <h4>frame="vsides":</h4>
+    <table frame="vsides">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table><br/>
+    <img src="images/表格标签.png" alt="表格标签" height="300" width="600"/>
+
+    <h4>注意：</h4><p style="color: brown">
+        如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框。为了避免这种情况，在空单元格中添加一个空格占位符即"&nbsp";就可以将边框显示出来。
+        如果表格没有边框，则使border=0，或者不使用border属性。跨行的表格单元格用rowspan属性，跨列的表格单元格用colspan属性。使用cellpadding来创建单元格内容与其边框之间的空白。
+        使用cellspacing增加单元格之间的距离。添加背景颜色使用bgcolor属性，添加背景图片使用background属性。使用 "align" 属性排列单元格内容,以便创建一个美观的表格。使用 "frame" 属性来控制围绕表格的边框。
+    </p>
+<hr/>
+    <!--列表-->
+    <b>一个无序列表：</b><!--始于<ul>标签，用粗体圆点标记，列表项内部可以使用段落，图片，换行符，链接等-->
+    <u1>
+        <li>咖啡</li>
+        <li>牛奶</li>
+        <li>茶</li>
+    </u1>
+    <b>一个有序的列表:</b><!--始于<ol>标签，用数字进行标记，列表项内部可以使用段落，图片，换行符，链接等-->
+    <ol>
+        <li>咖啡</li>
+        <li>牛奶</li>
+        <li>茶</li>
+    </ol>
+    <ol start="50">
+        <li>咖啡</li>
+        <li>牛奶</li>
+        <li>茶</li>
+    </ol>
+    <b>定义列表：以&lt;dl&gt;标签开始，每个自定义列表项以&lt;dt&gt;开始，每个自定义列表项的定义以 &lt;dd&gt;开始</b>
+    <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+    <b>不同类型的无序列表：</b>
+    <p>1.Disc项目符号列表：</p>
+    <ul type="disc">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ul>
+    <p>2.Circle项目符号列表：</p>
+    <ul type="circle">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ul>
+    <p>3.Square项目符号列表：</p>
+    <ul type="square">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ul>
+    <b>不同类型的的有序列表：</b>
+    <p>1.数字列表：</p>
+    <ol type="1">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ol>
+    <p>2.字母列表：</p>
+    <ol type="A">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ol>
+    <p>3.小写字母列表：</p>
+    <ol type="a">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ol>
+    <p>4.罗马字母列表：</p>
+    <ol type="I">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ol>
+    <p>5.小写罗马字母列表：</p>
+    <ol type="i">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>橘子</li>
+    </ol>
+    <b>嵌套列表：</b>
+    <ul>
+        <li>咖啡</li>
+        <li>茶
+            <ul>
+                <li>红茶</li>
+                <li>绿茶</li>
+            </ul>
+        </li>
+        <li>牛奶</li>
+    </ul>
+    <b>更复杂的嵌套列表：</b>
+    <ul>
+        <li>咖啡</li>
+        <li>茶
+            <ul>
+                <li>红茶</li>
+                <li>绿茶
+                    <ul>
+                        <li>中国茶</li>
+                        <li>日本茶</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+        <li>牛奶</li>
+    </ul>
+    <img src="images/列表标签.png" height="250" width="600" alt="列表标签"/>
+<hr>
+
+    <!--块-->
+    <p style="color: brown">大多数 HTML 元素被定义为块级元素或内联元素,块级元素在浏览器显示时，通常会以新行来开始（和结束）,例子：&lt;h1&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;table&gt;。<br/>
+        内联元素在显示时通常不会以新行开始,例子：&lt;b&gt;, &lt;td&gt;, &lt;a&gt;, &lt;img&gt;。</p>
+    <h4>HTML &lt;div&gt; 元素：</h4>
+    <p style="color: brown">
+        HTML &lt;div&gt; 元素是块级元素，它是可用于组合其他 HTML 元素的容器。<br/>
+        &lt;div&gt; 元素没有特定的含义。除此之外，由于它属于块级元素，浏览器会在其前后显示折行。<br/>
+        如果与 CSS 一同使用，&lt;div&gt; 元素可用于对大的内容块设置样式属性。<br/>
+        &lt;div&gt; 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。使用 &lt;table&gt; 元素进行文档布局不是表格的正确用法。&lt;table&gt; 元素的作用是显示表格化的数据。
+    </p>
+    <h4>HTML &lt;span&gt; 元素：</h4>
+    <p style="color: brown">
+        HTML &lt;span&gt; 元素是内联元素，可用作文本的容器。<br/>
+        &lt;span&gt; 元素也没有特定的含义。<br/>
+        当与 CSS 一同使用时，&lt;span&gt; 元素可用于为部分文本设置样式属性。
+    </p>
+    <img src="images/分组标签.png" alt="分组标签" height="150" width="600">
+<hr/>
+    <!--HTML类对 HTML 进行分类（设置类），使我们能够为元素的类定义 CSS 样式。为相同的类设置相同的样式，或者为不同的类设置不同的样式。-->
+    <div class="cities">
+        <h2>London</h2>
+        <p>
+            London is the capital city of England.
+            It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.
+            Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.
+        </p>
+    </div>
+    <div class="cities">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area and the most populous metropolitan area in the world. </p>
+    </div>
+    <div class="cities">
+        <h1><span class="red">&lt;span&gt;</span></h1>
+        HTML&lt;span&gt;元素是行内元素，能够用作文本的容器。设置&lt;span&gt;元素的类，能够为相同的&lt;span&gt;元素设置相同的样式。
+    </div>
+<hr/>
+    <!--HTML布局-->
+    <h1><span class="red">HTML布局:使用&lt;div&gt;元素来创建多列布局</span> </h1>
+    <div id="header">
+        <h1>City Gallery</h1>
+    </div>
+    <div id="nav">
+        London<br/>
+        Paris<br/>
+        Tokyo<br/>
+    </div>
+    <div id="section">
+        <h2>London</h2>
+        <p>
+            London is the capital city of England. It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.
+        </p>
+        <p>
+            Standing on the River Thames, London has been a major settlement for two millennia,
+            its history going back to its founding by the Romans, who named it Londinium.
+        </p>
+    </div>
+    <div id="footer">
+        使用div元素来创建布局的一个例子
+    </div><br/>
+    <h1><span class="red">HTML布局:使用HTML5的网站布局</span> </h1>
+    <header>
+        <h1>City Gallery</h1>
+    </header>
+    <nav>
+        London<br/>
+        Paris<br/>
+        Tokyo<br/>
+    </nav>
+    <section>
+        <h1>London</h1>
+        <p>
+            London is the capital city of England. It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.
+        </p>
+        <p>
+            Standing on the River Thames, London has been a major settlement for two millennia,
+            its history going back to its founding by the Romans, who named it Londinium.
+        </p>
+    </section>
+    <footer>
+        使用HTML5的网站布局的一个例子
+    </footer><br/>
+    <img src="images/HTML5语义元素.png" width="800" height="300" alt="HTML5语义元素"/><br/>
+    <h1><span class="red">HTML布局:使用表格的HTML布局</span> </h1>
+    <p>
+        <h4>注释：</h4>
+        &lt;table&gt; 元素不是作为布局工具而设计的。
+        &lt;table&gt; 元素的作用是显示表格化的数据。
+        使用 &lt;table&gt; 元素能够取得布局效果，因为能够通过 CSS 设置表格元素的样式.
+    </p>
+    <!--表格布局-->
+    <table class="lamp">
+        <tr>
+            <th>
+                <img src="images/picture.jpg" alt="白宇&朱一龙" style="height: 50px;width: 50px">
+            </th>
+            <td>
+                镇魂：镇恶者之心，扬善者之德。
+            </td>
+        </tr>
+        <tr>
+            <td style="color: brown; text-align: center">使用表格的HTML布局的一个例子</td>
+        </tr>
+    </table>
+<hr/>
+    <!--HTML响应式Web设计-->
+    <div class="cities">
+        <ul>
+            <h3>什么是响应式Web设计：</h3>
+            <li>RWD指的是响应式Web设计</li>
+            <li>RWD能够以可变尺寸传递网页</li>
+            <li>RWD对于平板和移动设备是必须的</li>
+        </ul>
+    </div><br/>
+    <!--自己创建响应式设计-->
+    <h2>1.自己创建响应式设计:</h2>
+    <div class="city">
+        <h2>London</h2>
+        <p>London is the capital city of England.</p>
+        <p>It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.</p>
+    </div>
+    <div class="city">
+        <h2>Paris</h2>
+        <p>Paris is the capital and most populous city of France.</p>
+    </div>
+    <div class="city">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+            and the most populous metropolitan area in the world.</p>
+    </div><hr/>
+    <!--使用Bootstrap创建响应式设计-->
+
+    <h2>2.使用Bootstrap创建响应式设计</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>London</h2>
+                <p>London is the capital city of England.</p>
+                <p>It is the most populous city in the United Kingdom,
+                    with a metropolitan area of over 13 million inhabitants.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Paris</h2>
+                <p>Paris is the capital and most populous city of France.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Tokyo</h2>
+                <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+                    and the most populous metropolitan area in the world.</p>
+            </div>
+        </div>
+    </div>
+<hr/>
+
+    <!--框架-->
+    <!--
+    <h4>如何使用3个不同的文档来制作垂直框架：</h4>
+    <frameset cols="25%,50%,25%">
+        <frame src="JS编写位置.html">
+        <frame src="运算符.html">
+        <frame src="基本语法.html">
+    </frameset>
+    -->
+    <img src="images/基本注意事项.png" height="250" width="800" alt="基本注意事项"/><br/>
+    <!--
+    <h4>&lt;noframes&gt;标签的使用：</h4>
+    <frameset cols="25%,50%,25%">
+        <frame src="JS编写位置.html">
+        <frame src="运算符.html">
+        <frame src="基本语法.html">
+        <noframes>
+            <body>
+            您的浏览器无法处理框架
+            </body>
+        </noframes>
+    </frameset>
+    -->
+    <h3>内联框架：</h3>
+    <iframe src="images/picture.jpg" height="400" width="400" frameborder="0"></iframe><br/>
+    <p>使用iframe作为链接的目标：</p>
+    <iframe src="images/picture.jpg" name="iframe_by" height="400" width="400"></iframe>
+    <p><a href="http://www.w3school.com.cn" target="iframe_by">W3school</a></p>
+    <p><b>注释：</b>由于链接的目标匹配 iframe 的名称，所以链接会在 iframe 中打开。</p>
+    <img src="images/iframe标签.png" height="150" width="600" alt="HTML iframe标签"/>
+<hr/>
+    <!--表单-->
+    <h2>一、&lt;input&gt;元素</h2>
+    <img src="images/input类型.png" alt="input元素的type类型" height="150" width="800"/>
+    <h3>1.文本输入：text</h3>
+    <form>
+        First name:
+        <input type="text" name="firstname"><br/>
+        Last name:
+        <input type="text" name="lastname"><br/>
+    </form>
+    <p>注意：表单本身是不可见的，文本字段的默认长度是20个字符。</p>
+    <h3>2.单选按钮输入：radio</h3>
+    <form>
+        <input type="radio" name="sex" value="male" checked>Male<br/>
+        <input type="radio" name="sex" value="female" checked>Female
+    </form>
+    <h3>3.提交按钮：submit</h3>
+    <form>
+        <fieldset>
+            <legend>Person name</legend>
+            First name:
+            <input type="text" name="firstname" value="chunjing"><br/>
+            Last name:
+            <input type="text" name="lastname" value="zhang"><br/>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    <h3>用&lt;fieldset&gt;组合表单数据，&lt;legend&gt;元素为&lt;fieldset&gt;元素定义标题。</h3>
+    <img src="images/form属性列表.png" alt="form属性列表" height="300" width="800"><br/>
+    <h3>4.密码字段：password</h3>
+    <form>
+        User name:
+        <input type="text" name="username"><br/>
+        User password:
+        <input type="password" name="password">
+        <input type="submit">
+    </form>
+    <h3>5.复选框（可选0个或多个）：checkbox</h3>
+    <form>
+        <input type="checkbox" name="vehicle" value="Bike">I have a bike<br/>
+        <input type="checkbox" name="vehicle" value="Car">I have a car<br/>
+        <input type="checkbox" name="vehicle" value="Plane">I have a plane<br/>
+        <input type="submit">
+    </form>
+    <h3>6.限制输入的数字字段：number</h3>
+    <form>
+        Quantity(between 1 and 5):
+        <input type="number" name="quantity" min="1" max="5">
+        <input type="submit">
+    </form>
+    <img src="images/输入限制.png" height="400" width="800" alt="输入限制"/>
+    <h3>7.用于包含日期的输入字段：date</h3>
+    <form>
+        Enter a date before 1998-01-01:
+        <input type="date" name="birthday" max="1997-12-31"><br/>
+        Enter a data after 2010-01-01:
+        <input type="date" name="birthday" min="2010-01-02"><br/>
+        <input type="submit">
+    </form>
+    <h3>8.包含颜色的输入字段(颜色选择器）：color</h3>
+    <form>
+        Select your favourite color:
+        <input type="color" name="favouritecolor">
+        <input type="submit">
+    </form>
+    <h3>9.一定范围内的值:range</h3>
+    <form>
+        <input type="range" name="points" min="0" max="10">
+    </form>
+    <h3>10.选择月份和年份：month</h3>
+    <form>
+        Birthday(month and year):
+        <input type="month" name="birdaymonth">
+    </form>
+    <h3>11.选择周和年份：month</h3>
+    <form>
+        Select a week:
+        <input type="week" name="week_year">
+    </form>
+    <h3>12.选择时间（无时区）：time</h3>
+    <form>
+        Select a time:
+        <input type="time" name="time">
+    </form>
+    <h3>13.选择日期和时间（无时区）：datetime</h3>
+    <form>
+        Birthday(date and time):
+        <input type="datetime-local" name="birdaytime">
+    </form>
+    <h3>14.选择日期和时间（有时区）：datetime</h3>
+    <form>
+        Birthday(date and time):
+        <input type="datetime" name="birdaytime">
+    </form>
+    <p>注释：Chrome、Firefox 或 Internet Explorer 不支持 type="datetime"。</p>
+<hr/>
+    <h2>二、&lt;select&gt;元素（下拉列表）</h2>
+    <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi" selected>Audi</option>
+    </select>
+<hr/>
+    <h2>三、&lt;textarea&gt;元素：定义多行输入字段（文本域）</h2>
+    <textarea name="message" rows="10" cols="30">
+        The car was playing in the garden.
+        Hello everyone, my name is chunjing zhang.
+        Nice to meet you.
+        Are you OK?
+    </textarea>
+<hr/>
+    <h2>四、&lt;button&gt;元素：定义可点击的按钮</h2>
+    <button type="button" onclick="alert('Hello World!')">Click Me</button>
+<hr/>
+    <h2>五、HTML5的&lt;datalist&gt;元素：为&lt;input&gt;元素规定预定义选项列表,&lt;input&gt;元素的list属性必须引用&lt;datalist&gt;元素的id属性。</h2>
+    <form>
+        Cars:
+        <input list="cars">
+        <datalist id="cars">
+            <option value="Volvo"></option>
+            <option value="Saab"></option>
+            <option value="Fiat"></option>
+            <option value="Audi"></option>
+        </datalist>
+    </form>
+</html>

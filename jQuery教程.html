@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery教程</title>
+    <!--引用jquery库-->
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<p><a href="http://www.w3school.com.cn/jquery/jquery_intro.asp">jQuery简介</a> </p>
+<!--jQuery语法，可以选取（查询）HTML元素，并对其进行操作-->
+<h3>jQuery语法：$(selector).action()</h3>
+<ul>
+    <li>美元符号定义jQuery</li>
+    <li>选择符（selector）"查询"和"查找"HTML元素</li>
+    <li>jQuery的action()执行对元素的操作</li>
+</ul>
+<h3>示例：</h3>
+<ul>
+    <li>$(this).hide() - 隐藏当前元素</li>
+    <li>$("p").hide() - 隐藏所有段落</li>
+    <li>$(".test").hide() - 隐藏所有 class="test" 的所有元素</li>
+    <li>$("#test").hide() - 隐藏所有 id="test" 的元素</li>
+</ul>
+<h3>文档就绪函数：$(document).ready(function(){   //jQuery functions go here  });</h3>
+<p>这是为了防止文档在完全加载（就绪）之前运行jQuery代码</p>
+
+
+<h3>jQuery hide()函数：隐藏当前的HTML元素</h3>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $(this).hide();
+        });
+    });
+</script>
+<button type="button">Click Me</button>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#test").hide();
+            //$(".test").hide();
+            //$("p").hide();
+        })
+    })
+</script>
+
+<p id="test">This is a paragraph</p>
+<button type="button">Click me</button>
+<!--jQuery选择器-->
+<p>
+    jQuery 元素选择器和属性选择器允许您通过标签名、属性名或内容对 HTML 元素进行选择。
+
+    选择器允许您对 HTML 元素组或单个元素进行操作。
+
+    在 HTML DOM 术语中：
+
+    选择器允许您对 DOM 元素组或单个 DOM 节点进行操作。<br/>
+</p>
+</body>
+</html>
