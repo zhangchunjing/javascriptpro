@@ -50,13 +50,67 @@
 <button type="button">Click me</button>
 <!--jQuery选择器-->
 <p>
-    jQuery 元素选择器和属性选择器允许您通过标签名、属性名或内容对 HTML 元素进行选择。
-
-    选择器允许您对 HTML 元素组或单个元素进行操作。
-
-    在 HTML DOM 术语中：
-
+    jQuery 元素选择器和属性选择器允许您通过标签名、属性名或内容对 HTML 元素进行选择。<br/>
+    选择器允许您对 HTML 元素组或单个元素进行操作。<br/>
     选择器允许您对 DOM 元素组或单个 DOM 节点进行操作。<br/>
 </p>
+<h3>jQuery元素选择器</h3>
+<p>
+    jQuery 使用 CSS 选择器来选取 HTML 元素。<br/>
+    $("p") 选取 &lt;p&gt; 元素。<br/>
+    $("p.intro") 选取所有 class="intro" 的 &lt;p&gt; 元素。<br/>
+    $("p#demo") 选取所有 id="demo" 的 &lt;p&gt; 元素。<br/>
+</p>
+<h3>jQuery属性选择器</h3>
+<p>
+    jQuery 使用 XPath 表达式来选择带有给定属性的元素。<br/>
+    $("[href]") 选取所有带有 href 属性的元素。<br/>
+    $("[href='#']") 选取所有带有 href 值等于 "#" 的元素。<br/>
+    $("[href!='#']") 选取所有带有 href 值不等于 "#" 的元素。<br/>
+    $("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。<br/>
+</p>
+<h3>jQuery CSS选择器</h3>
+<p>jQuery CSS 选择器可用于改变 HTML 元素的 CSS 属性。</p>
+<script>
+    $(document).ready(function () {
+        $("button#btn3").click(function () {
+            $("p.pt").css("background-color","red");
+        });
+    });
+</script>
+<h2>This is a heading</h2>
+<p class="pt">This is a paragraph</p>
+<p class="pt">This is another paragraph</p>
+<button type="button"id="btn3">click  me</button>
+<p><img src="images/选择器实例.png" alt="选择器实例" height="400" width="800"> </p>
+<p><a href="http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp">jQuery选择器参考手册</a> </p>
+<!--jQuery事件-->
+<h3>jQuery名称冲突</h3>
+<p>
+    jQuery 使用 $ 符号作为 jQuery 的简介方式。<br/>
+    某些其他 JavaScript 库中的函数（比如 Prototype）同样使用 $ 符号。<br/>
+    jQuery 使用名为 noConflict() 的方法来解决该问题。<br/>
+    var jq=jQuery.noConflict()，帮助您使用自己的名称（比如 jq）来代替 $ 符号。<br/>
+</p>
+<script>
+    var jq=jQuery.noConflict();
+    jq(document).ready(function(){
+        jq("button#bt").click(function(){
+            jq("p.pm").text("jQuery仍在运行");
+        })
+    })
+</script>
+<p class="pm">这是一个段落</p>
+<button id="bt" type="button">测试</button>
+<h3>结论</h3>
+<p>遵循以下原则使代码更易维护：</p>
+<ul>
+    <li>把所有 jQuery 代码置于事件处理函数中</li>
+    <li>把所有事件处理函数置于文档就绪事件处理器中</li>
+    <li>把 jQuery 代码置于单独的 .js 文件中</li>
+    <li>如果存在名称冲突，则重命名 jQuery 库</li>
+</ul>
+<p><img src="images/jQuery事件.png" height="250" width="800" alt="jQuery事件"/></p>
+<p><a href="http://www.w3school.com.cn/jquery/jquery_ref_events.asp">jQuery事件参考手册</a> </p>
 </body>
 </html>
