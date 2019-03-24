@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery效果</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        div.ex{
+            background-color: #d4d4d4;
+            height: 150px;
+            width: 400px;
+            padding: 4px;
+            border: solid 1px antiquewhite;
+        }
+        div.ex1{
+            background-color: #d4d4d4;
+            height: 150px;
+            width: 400px;
+            padding: 4px;
+            border: solid 1px antiquewhite;
+        }
+        div.ex2,div.ex4,div.ex5,button#btn20{
+            background-color: #d4d4d4;
+            height: 150px;
+            width: 400px;
+            padding: 4px;
+            border: solid 1px antiquewhite;
+        }
+        div.ex3{
+            background-color: #d4d4d4;
+            height: 150px;
+            width: 400px;
+            padding: 4px;
+            border: solid 1px antiquewhite;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--jQuery效果——隐藏和显示-->
+<h3>一个简单的jQuery hide()方法</h3>
+<script>
+    $(document).ready(function () {
+        $("p").click(function () {
+            $(this).hide();
+        });
+    });
+</script>
+<p>如果你点我，我会消失</p>
+<p>点我，我会消失</p>
+<p>也要点我</p>
+<h3>隐藏部分文本</h3>
+<script type="text/css">
+
+</script>
+<h4>中国办事处</h4>
+<div class="ex">
+    <button class="hide" type="button">隐藏</button>
+    <p>
+        联系人：张先生<br/>
+        北三环中路100号<br/>
+        北京<br/>
+    </p>
+</div>
+<h4>美国办事处</h4>
+<div class="ex">
+    <button class="hide" type="button">隐藏</button>
+    <p>
+        联系人：David<br/>
+        第五大街200号<br/>
+        纽约<br/>
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".ex .hide").click(function () {
+            $(this).parents(".ex").hide("slow");
+        })
+    })
+</script>
+<h3>jQuery hide()和show():隐藏和显示HTML元素</h3>
+<h4>中国办事处</h4>
+<button class="hide" type="button" id="btn1">隐藏</button>
+<button class="show" type="button" id="btn3">显示</button>
+<div class="ex1">
+    <p>
+        联系人：张先生<br/>
+        北三环中路100号<br/>
+        北京<br/>
+    </p>
+</div>
+<h4>美国办事处</h4>
+<button class="hide" type="button" id="btn2">隐藏</button>
+<button class="show" type="button" id="btn4">显示</button>
+<div class="ex2">
+    <p>
+        联系人：David<br/>
+        第五大街200号<br/>
+        纽约<br/>
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $(".ex1").hide("slow");
+        });
+        $("#btn2").click(function () {
+            $(".ex2").hide("fast");
+        });
+        $("#btn3").click(function () {
+            $(".ex1").show("slow");
+        });
+        $("#btn4").click(function () {
+            $(".ex2").show("fast");
+        });
+    });
+</script>
+<p style="color: brown">
+    <b>语法：</b><br/>
+    $(selector).hide(speed,callback);<br/>
+    $(selector).show(speed,callback);<br/>
+    可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。<br/>
+    可选的 callback 参数是隐藏或显示完成后所执行的函数名称。<br/>
+</p>
+<h3>jQyery toggle():切换hide()方法和show()方法</h3>
+<h4>中国办事处</h4>
+<button type="button" id="btn5">切换</button>
+<div class="ex1">
+    <p>
+        联系人：张先生<br/>
+        北三环中路100号<br/>
+        北京<br/>
+    </p>
+</div>
+<h4>美国办事处</h4>
+<button type="button" id="btn6">切换</button>
+<div class="ex2">
+    <p>
+        联系人：David<br/>
+        第五大街200号<br/>
+        纽约<br/>
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btn5").click(function () {
+            $(".ex1").toggle();
+        });
+        $("#btn6").click(function () {
+            $(".ex2").toggle();
+        });
+    });
+</script>
+<p><a href="http://www.w3school.com.cn/jquery/jquery_ref_effects.asp">jQuery效果参考手册</a> </p>
+<hr/>
+<!--jQuery效果——淡入淡出-->
+<h3>jQuery效果——淡入淡出</h3>
+<h3>jQuery Fading方法（4种）：实现元素的淡入淡出效果</h3>
+<ul>
+    <li>fadeIn():用于淡入已隐藏的元素</li>
+    <li>fadeOut():用于淡出可见元素</li>
+    <li>fadeToggle():在fadeIn()和fadeOut()之间进行切换</li>
+    <li>fadeTo(speed,opacity,callback):允许渐变为给定的不透明度（介于0—1之间）</li>
+</ul>
+<h4>美国办事处</h4>
+<button class="hide" type="button" id="btn7">点击使之淡入</button>
+<button class="show" type="button" id="btn8">点击使之淡出</button>
+<button class="show" type="button" id="btn9">点击使之切换</button>
+<button class="show" type="button" id="btn10">点击使之透明度改变</button>
+<div class="ex3">
+    <p>
+        联系人：David<br/>
+        第五大街200号<br/>
+        纽约<br/>
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btn7").click(function () {
+            $(".ex3").fadeIn("slow");
+        });
+        $("#btn8").click(function () {
+            $(".ex3").fadeOut("fast");
+        });
+        $("#btn9").click(function () {
+            $(".ex3").fadeToggle("slow");
+        });
+        $("#btn10").click(function () {
+            $(".ex3").fadeTo("slow",0.5);
+        });
+    });
+</script>
+<!--jQuery效果——滑动-->
+<h3>jQuery效果——滑动(3种)</h3>
+<ul>
+    <li>slideDown():用于向下滑动元素</li>
+    <li>slideUp():用于向上滑动</li>
+    <li>slideToggle():可以在slideDown()方法和slideUp()方法之间进行切换</li>
+</ul>
+<h4>美国办事处</h4>
+<button class="hide" type="button" id="btn11">点击使之向下滑动</button>
+<button class="show" type="button" id="btn12">点击使之向上滑动</button>
+<button class="show" type="button" id="btn13">点击使之在上下滑动之间进行切换</button>
+<div class="ex4">
+    <p>
+        联系人：David<br/>
+        第五大街200号<br/>
+        纽约<br/>
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btn11").click(function () {
+            $(".ex4").slideDown("slow");
+        });
+        $("#btn12").click(function () {
+            $(".ex4").slideUp("slow");
+        });
+        $("#btn13").click(function () {
+            $(".ex4").slideToggle("slow");
+        });
+    });
+</script>
+<!--jQuery效果——动画-->
+<h3>jQuery效果——动画:animate()方法</h3>
+<p>
+    <b>语法： $(selector).animate({params},speed,callback);</b><br/>
+    必需的 params 参数定义形成动画的 CSS 属性。<br/>
+    可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。<br/>
+    可选的 callback 参数是动画完成后所执行的函数名称。<br/>
+    下面的例子演示 animate() 方法的简单应用；它把 &lt;div&gt; 元素移动到左边，直到 left 属性等于 300 像素为止：<br/>
+</p>
+<button type="button" id="btn14">开始动画</button>
+<p>默认情况下，所有的 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div id="div1" style="background-color: green;height: 100px;width: 100px;position: absolute;margin-left: 300px;">
+<script>
+    $(document).ready(function () {
+        $("#btn14").click(function () {
+            $("#div1").animate({left:'300px'});
+        });
+    });
+</script><br/>
+</div>
+<h3>jQuery animate()操作多个属性</h3>
+<div id="div2" style="background-color: antiquewhite;opacity: 0.7; height: 100px;width: 100px;position: absolute;margin-left: 300px"></div>
+<button type="button" id="btn15">开始动画</button>
+<script>
+    $(document).ready(function () {
+        $("#btn15").click(function () {
+            $("#div2").animate({
+                left:'300px',
+                opacity:'0.5',
+                height:'200px',
+                width:'200px',
+            },"slow"
+            );
+        });
+    });
+</script>
+<h3>jQuery animate()使用相对值</h3>
+<div id="div3" style="background-color: antiquewhite;opacity: 0.7; height: 100px;width: 100px;position: absolute;margin-left: 300px"></div>
+<button type="button" id="btn16">开始动画</button>
+<script>
+    $(document).ready(function () {
+        $("#btn16").click(function () {
+            $("#div3").animate({
+                    left:'300px',
+                    opacity:'0.5',
+                    height:'+=200px',
+                    width:'+=200px',
+                },"slow"
+            );
+        });
+    });
+</script>
+<h3>jQuery animate()——使用预定义的值，可以把属性的动画值设置为"show" "hide"或"toggle"</h3>
+<div id="div4" style="background-color: antiquewhite;opacity: 0.7; height: 100px;width: 100px;position: absolute;margin-left: 300px"></div>
+<button type="button" id="btn17">开始动画</button>
+<script>
+    $(document).ready(function () {
+        $("#btn17").click(function () {
+            $("#div4").animate({
+                    left:'300px',
+                    opacity:'0.5',
+                    height:'toggle',
+                },"slow"
+            );
+        });
+    });
+</script>
+<h3>jQuery animate()——使用队列功能</h3>
+<div id="div5" style="background-color: antiquewhite;opacity: 0.7; height: 100px;width: 100px;position: absolute;margin-left: 300px"></div>
+<button type="button" id="btn18">开始动画</button>
+<script>
+    $(document).ready(function () {
+        $("#btn18").click(function () {
+            $("#div5").animate({left:'300px', height:'300px', opacity:'0.5',},"slow");
+            $("#div5").animate({left:'300px', width:'300px', opacity:'0.8',},"slow");
+            $("#div5").animate({left:'300px', height:'100px', opacity:'0.5',},"slow");
+            $("#div5").animate({left:'300px', width:'100px', opacity:'0.8',},"slow");
+        });
+    });
+</script>
+<h4>实例2</h4>
+<div id="div6" style="background-color: antiquewhite;opacity: 0.7; height: 100px;width: 100px;position: absolute;margin-left: 300px">Hello</div>
+<button type="button" id="btn19">开始动画</button>
+<script>
+    $(document).ready(function () {
+        $("#btn19").click(function () {
+            $("#div6").animate({left:'300px', height:'300px', opacity:'0.5',},"slow");
+            $("#div6").animate({left:'300px', width:'300px',fontSize:'3em', opacity:'0.8',},"slow");
+        });
+    });
+</script>
+<h3>jQuery停止动画：jQuery stop()用于在动画或效果完成前对它们进行停止（包括滑动、淡入淡出、自定义动画）</h3>
+<p>
+    <b>语法：$(selector).stop(stopAll,goToEnd);</b>
+    可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。<br/>
+    可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。<br/>
+</p>
+<h4>美国办事处</h4>
+<button type="button" id="btn21">停止滑动</button><br/>
+<button class="show" type="button" id="btn20" style="height: 50px">点击使之在上下滑动之间进行切换</button>
+<div class="ex5">
+    <p>
+        联系人：David<br/>
+        第五大街200号<br/>
+        纽约<br/>
+    </p>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btn21").click(function () {
+            $(".ex5").stop();
+        });
+        $("#btn20").click(function () {
+            $(".ex5").slideToggle(4000);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("#start").click(function(){
+            $("#div7").animate({left:'800px'},5000);
+            $("#div7").animate({fontSize:'3em'},5000);
+        });
+
+        $("#stop").click(function(){
+            $("#div7").stop();
+        });
+
+        $("#stop2").click(function(){
+            $("#div7").stop(true);
+        });
+
+        $("#stop3").click(function(){
+            $("#div7").stop(true,true);
+        });
+
+    });
+</script>
+<button id="start">开始</button>
+<button id="stop">停止</button>
+<button id="stop2">停止所有</button>
+<button id="stop3">停止但要完成</button>
+<p><b>"开始"</b> 按钮会启动动画。</p>
+<p><b>"停止"</b> 按钮会停止当前活动的动画，但允许已排队的动画向前执行。</p>
+<p><b>"停止所有"</b> 按钮停止当前活动的动画，并清空动画队列；因此元素上的所有动画都会停止。</p>
+<p><b>"停止但要完成"</b> 会立即完成当前活动的动画，然后停下来。</p>
+
+<div id="div7" style="background:#98bf21;height:100px;width:200px;position:absolute;left: 500px">HELLO</div>
+
+<!--jQuery Callback函数-->
+<h3>jQuery Callback函数:在动画100%完成之后执行</h3>
+<script>
+    $(document).ready(function () {
+        $("#btn22").click(function () {
+            $("#p4").hide(1000,function () {
+                alert("文本已隐藏");
+            })
+        })
+    })
+</script>
+<button type="button" id="btn22">Hide</button>
+<p id="p4">This is a paragraph with little content.</p>
+<h3>jQuery  Chaining:在一条语句中允许多个 jQuery 方法（在相同的元素上）</h3>
+<script>
+    $(document).ready(function () {
+        $("#btn23").click(function () {
+            $("#p1").css("color","red").slideUp(2000).slideDown(2000);
+        })
+    })
+</script>
+<p id="p1">jQuery 乐趣十足！</p>
+<button id="btn23">点击这里</button>
+
+
+
+</body>
+</html>
