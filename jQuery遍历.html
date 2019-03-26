@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery遍历</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        .ancestors *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+        .slight *
+        {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+<p><a href="http://www.w3school.com.cn/jquery/jquery_ref_traversing.asp">jQuery遍历参考手册</a> </p>
+<h3>DOM树：</h3>
+<p><img src="images/DOM树.png" height="300" width="400" alt="DOM树"/> </p>
+<h3>向上遍历DOM树</h3>
+<ul>
+    <li>parent():返回被选元素的直接父元素</li>
+    <li>parents():返回被选元素的所有祖先</li>
+    <li>parentsUntil():返回介于两个给定元素之间的所有祖先元素</li>
+</ul>
+<div class="ancestors" id="div1" style="width: 500px;">
+    <ul>ul(祖父)
+        <li>li(直接父)
+            <span>span</span>
+        </li>
+    </ul>
+</div>
+<script>
+    $(document).ready(function () {
+        $("span").parent().css({"color":"red","border":"2px solid red"});
+    });
+</script>
+<!--
+<div class="ancestors" id="div2" style="width: 500px;">
+    <div>div(曾祖父)
+        <ul>ul(祖父)
+            <li>li(直接父)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("span").parentsUntil("div").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+-->
+<!--jQuery遍历——后代-->
+<h3>向下遍历DOM树</h3>
+<ul>
+    <li>children():返回被选元素的所有直接子元素</li>
+    <li>find():返回被选元素的所有后代元素</li>
+</ul>
+<!--jQuery遍历——同胞-->
+<h3>在DOM树中水平遍历</h3>
+<ul>
+    <li>siblings():返回所有同胞元素</li>
+    <li>next():返回被选元素的下一个同胞元素</li>
+    <li>nextAll():返回被选元素之后的所有同胞元素</li>
+    <li>nextUntil():返回介于两个给定参数之间的所有跟随的同胞元素。（方向向后）</li>
+    <li>prev():返回被选元素的上一个同胞元素</li>
+    <li>prevAll():返回被选元素之前的所有同胞元素</li>
+    <li>prevUntil():返回介于两个给定参数之间的所有跟随的同胞元素。（方向向前）</li>
+</ul>
+<div class="slight" style="width: 500px;">
+    <div>div（父）
+        <p>p</p>
+        <h3>h3</h3>
+        <span>span</span>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        //$("span").siblings().css({"color":"blue","border":"2px solid blue"});
+        //$("span").next().css({"color":"blue","border":"2px solid blue"});
+        //$("span").nextAll().css({"color":"blue","border":"2px solid blue"});
+        //$("span").nextUntil("h3").css({"color":"blue","border":"2px solid blue"});
+        //$("span").prev().css({"color":"blue","border":"2px solid blue"});
+        //$("span").prevAll().css({"color":"blue","border":"2px solid blue"});
+        $("span").prevUntil("p").css({"color":"blue","border":"2px solid blue"});
+    });
+</script>
+<!--jQuery遍历——过滤-->
+<h3>缩小搜索元素的范围</h3>
+<ul>
+    <li>first():返回被选元素的首个元素</li>
+    <li>last():返回被选元素的最后一个元素</li>
+    <li>eq():返回被选元素中带有指定索引号的元素</li>
+    <li>filter():返回匹配标准的所有元素</li>
+    <li>not():返回不匹配标准的所有元素</li>
+</ul>
+
+</body>
+</html>
