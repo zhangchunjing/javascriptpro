@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Mobile列表</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+<div data-role="page" id="page1">
+    <div data-role="header">
+        <h3>jQuery Mobile列表</h3>
+    </div>
+    <div data-role="content">
+        <!--jQuery Mobile 列表视图-->
+        <h3>jQuery Mobile 列表视图</h3>
+        <p>
+            jQuery Mobile 中的列表视图是标准的 HTML 列表：有序列表 (&lt;ol&gt;) 和无序列表 (&lt;ul&gt;)。<br/>
+        如需创建列表，请向 &lt;ol&gt; 或 &lt;ul&gt; 元素添加 data-role="listview"。如需使这些项目可点击，请在每个列表项（&lt;li&gt;）中规定链接：
+        如果需要为列表添加圆角和外边距，使用data-inset="true"属性
+        </p>
+        <h3>无序列表</h3>
+        <ul data-role="listview">
+            <li><a href="#page2">列表项</a> </li>
+            <li><a href="#page2">列表项</a> </li>
+            <li><a href="#page2">列表项</a> </li>
+        </ul><br/>
+        <h3>有序列表</h3>
+        <ol data-role="listview">
+            <li><a href="#page2">列表项</a> </li>
+            <li><a href="#page2">列表项</a> </li>
+            <li><a href="#page2">列表项</a> </li>
+        </ol><br/>
+        <h3>添加圆角和外边距</h3>
+        <ol data-role="listview" data-inset="true">
+            <li><a href="#page2">列表项</a> </li>
+            <li><a href="#page2">列表项</a> </li>
+            <li><a href="#page2">列表项</a> </li>
+        </ol><br/>
+        <h3>列表分隔符：向 &lt;li&gt; 元素添加 data-role="list-divider" 属性</h3>
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">欧洲</li>
+            <li><a href="#page2">德国</a> </li>
+            <li><a href="#page2">英国</a> </li>
+            <li data-role="list-divider">亚洲</li>
+            <li><a href="#page2">中国</a> </li>
+            <li><a href="#page2">印度</a> </li>
+            <li data-role="list-divider">非洲</li>
+            <li><a href="#page2">埃及</a> </li>
+            <li><a href="#page2">南非</a> </li>
+        </ul>
+        <h3>如果您的列表是字母顺序的（比如通讯录），jQuery Mobile 自动添加恰当的分隔符，通过在 &lt;ol&gt; 或 &lt;ul&gt; 元素上设置 data-autodividers="true" 属性<br/>
+            data-autodividers="true" 属性通过对列表项文本的首字母进行大写来创建分隔符.
+        </h3>
+        <h3>我的通讯录</h3>
+        <ul data-role="listview" data-inset="true" data-autodividers="true">
+            <li><a href="#">Adele</a> </li>
+            <li><a href="#">Adele1</a> </li>
+            <li><a href="#">Adele2</a> </li>
+            <li><a href="#">Bdele1</a> </li>
+            <li><a href="#">Bdele2</a> </li>
+            <li><a href="#">Cdele1</a> </li>
+            <li><a href="#">Cdele2</a> </li>
+            <li><a href="#">Cdele3</a> </li>
+        </ul><br/>
+        <h3>搜索过滤器：如需在列表中添加搜索框，请使用 data-filter="true" 属性</h3>
+        <ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-filter-placeholder="搜索姓名...">
+            <li><a href="#">Adele</a> </li>
+            <li><a href="#">Adele1</a> </li>
+            <li><a href="#">Adele2</a> </li>
+            <li><a href="#">Bdele1</a> </li>
+            <li><a href="#">Bdele2</a> </li>
+            <li><a href="#">Cdele1</a> </li>
+            <li><a href="#">Cdele2</a> </li>
+            <li><a href="#">Cdele3</a> </li>
+        </ul>
+        <hr/>
+        <!--jQuery Mobile列表内容-->
+        <h3>jQuery Mobile列表缩略图</h3>
+        <h3>包含缩略图的列表</h3>
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#page2">
+                    <img src="images/picture.jpg">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page2">
+                    <img src="images/tupian.jpg">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+            </li>
+        </ul><br/>
+        <h3>jQuery Mobile列表图标：如需向您的列表添加 16x16px 的图标，请向 &lt;img&gt; 元素添加 class="ui-li-icon" 属性</h3>
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#page2">
+                    <img src="images/picture.jpg" class="ui-li-icon">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+            </li>
+            <li>
+                <a href="#page2">
+                    <img src="images/tupian.jpg" class="ui-li-icon">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+            </li>
+        </ul><br/>
+        <h3>拆分按钮：</h3>
+        <p>如需创建带有垂直分隔栏的拆分列表，请在 &lt;li&gt; 元素内放置两个链接。<br/>
+        jQuery Mobile 会将两个链接分隔开，链接中的文本（如有）将在用户划过该图标时显示</p>
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#page2">
+                    <img src="images/picture.jpg" class="ui-li-icon">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+                <a href="#">Some Text</a>
+            </li>
+            <li>
+                <a href="#page2">
+                    <img src="images/tupian.jpg" class="ui-li-icon">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+                <a href="#">Some Text</a>
+            </li>
+        </ul><br/>
+        <h3>通过添加页面和对话框，可使链接的功能更强大</h3>
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <a href="#page2">
+                    <img src="images/picture.jpg">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+                <a href="#download" data-rel="dialog" data-transition="pop">Download Browser</a>
+            </li>
+            <li>
+                <a href="#page2">
+                    <img src="images/tupian.jpg">
+                    <h3>镇魂</h3>
+                    <p>镇恶者之心，扬善者之德</p>
+                </a>
+                <a href="#download" data-rel="dialog" data-transition="pop">Download Browser</a>
+            </li>
+        </ul><br/>
+        <h3>计数泡沫：用于显示与列表项相关的数目，例如邮箱中的消息，如需添加计数泡沫，请使用行内元素，比如 &lt;span&gt;，设置 class "ui-li-count" 属性并添加数字</h3>
+        <h3>我的邮箱</h3>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">收件箱<span class="ui-li-count">25</span></a> </li>
+            <li><a href="#">发件箱<span class="ui-li-count">357</span></a> </li>
+            <li><a href="#">垃圾箱<span class="ui-li-count">5</span></a> </li>
+        </ul><br/>
+        <h3>更改列表项的默认链接图标（右箭头是默认的）</h3>
+        <h3>列表图标：</h3>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">默认是右箭头</a> </li>
+            <li data-icon="plus"><a href="#">data-icon="plus"</a> </li>
+            <li data-icon="minus"><a href="#">data-icon="minus"</a> </li>
+            <li data-icon="delete"><a href="#">data-icon="delete"</a> </li>
+            <li data-icon="info"><a href="#">data-icon="info"</a> </li>
+            <li data-icon="search"><a href="#">data-icon="search"</a> </li>
+            <li data-icon="false"><a href="#">data-icon="false"</a> </li>
+        </ul><br/>
+        <h3>可折叠列表：创建隐藏和显示内容的列表</h3>
+        <div data-role="collapsible">
+            <h3>A</h3>
+            <ul data-role="listview">
+                <li><a href="#">Adma</a> </li>
+                <li><a href="#">Angle</a> </li>
+            </ul>
+        </div>
+        <div data-role="collapsible">
+            <h3>B</h3>
+            <ul data-role="listview">
+                <li><a href="#">Bill</a> </li>
+                <li><a href="#">Bob</a> </li>
+            </ul>
+        </div>
+        <div data-role="collapsible">
+            <h3>C</h3>
+            <ul data-role="listview">
+                <li><a href="#">Cat</a> </li>
+                <li><a href="#">Chris</a> </li>
+                <li><a href="#">Cmis</a> </li>
+            </ul>
+        </div>
+        <h3>更多内样式：如何制作日历</h3>
+        <h3>我的日历</h3>
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">星期三，1月2日，2018<span class="ui-li-count">2</span></li>
+            <li>
+                <a href="#">
+                    <h3>医生</h3>
+                    <p><b>To Peter Griffin</b></p>
+                    <p>Well, Mr. Griffin, I've looked into physical results.</p>
+                    <p>Ah, Mr. Griffin, I'm not quite sure how to say this. Kim Bassinger? Bass singer? Bassinger?</p>
+                    <p>But now, onto the cancer</p>
+                    <p>You are a Cancer, right? You were born in July? Now onto these test results.</p>
+                    <p class="ui-li-aside">Re:Appointment</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>Glen Quagmire</h3>
+                    <p>Remember me this weekend!</p>
+                    <br>
+                    <p>- giggity giggity goo</p>
+                    <p class="ui-li-aside">Re: Camping</p></a>
+                </a>
+            </li>
+            <li data-role="list-divider">周二，1月1日，2019<span class="ui-li-count">1</span></li>
+            <li>
+                <a href="#">
+                    <h3>Louis</h3>
+                    <p><b>Happy Girl!</b></p>
+                    <p>Thank you so much!!</p>
+                    <p class="ui-li-aside">Re: Christmas Gifts</p></a>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer">
+        <h3>页脚文本</h3>
+    </div>
+</div>
+
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h3>第二页页眉</h3>
+    </div>
+    <div data-role="content">
+        <div>
+            <a href="#page1" data-role="button">第一页</a>
+            <a href="#page1" data-role="button" data-rel="back">返回</a>
+        </div>
+    </div>
+    <div data-role="footer">
+        <h3>页脚文本</h3>
+    </div>
+</div>
+<div data-role="page" id="download">
+    <div data-role="content">
+        <h3>拆分按钮实例</h3>
+        <p>该按钮仅供演示</p>
+        <a href="#" data-role="button" data-rel="back" data-icon="check" data-inline="true" data-mini="true">下载</a>
+        <a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">取消</a>
+    </div>
+</div>
+
+</body>
+</html>
