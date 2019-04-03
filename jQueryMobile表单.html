@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Mobile表单</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+<div data-role="header">
+    <h3>jQuery Mobile表单</h3>
+</div>
+<div data-role="content">
+    <!--jQuery Mobile表单结构-->
+    <h3>jQuery Mobile表单结构</h3>
+    <h3>jQuery Mobile 中，您可以使用以下表单控件</h3>
+    <ul>
+        <li>文本框</li>
+        <li>搜索框</li>
+        <li>单选框</li>
+        <li>复选框</li>
+        <li>选择菜单</li>
+        <li>滑动条</li>
+        <li>翻转切换开关</li>
+    </ul>
+    <h3>注意：</h3>
+    <ul>
+        <li>&lt;form&gt;元素必须设置method和action属性</li>
+        <li>每个表单元素必须设置唯一的 "id" 属性。该 id 在站点的页面中必须是唯一的。这是因为 jQuery Mobile 的单页面导航模型允许许多不同的“页面”同时呈现。</li>
+        <li>每个表单元素必须有一个标记（label）。请设置 label 的 for 属性来匹配元素的 id。</li>
+    </ul>
+    <form method="post" action="jQueryMobile表单.html" id="fo">
+        <label for="fname">姓名：</label>
+        <input type="text" name="fname" id="fname">
+        <input type="submit" data-inline="true" value="提交">
+    </form>
+    <h3>如需隐藏 label，请使用类 ui-hidden-accessible。这很常用，当您需要元素的 placeholder 属性充当 label 时</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <label for="fname1" class="ui-hidden-accessible">姓名</label>
+        <input type="text" id="fname1" name="fname1" placeholder="姓名...">
+        <input type="submit" data-inline="true" value="提交">
+    </form>
+    <h3>域容器</h3>
+    <p>如果需要 label 和表单元素在宽屏幕上显示正常，请用带有 data-role="fieldcontain" 属性的 &lt;div&gt; 或 &lt;fieldset&gt; 元素来包装 label 或表单元素：</p>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <label for="fname2">姓：</label>
+            <input type="text" name="fname2" id="fname2">
+            <label for="fname3">名：</label>
+            <input type="text" name="fname3" id="fname3">
+        </div>
+        <input type="submit" data-inline="true" value="提交">
+    </form>
+    <p>fieldcontain 属性基于页面宽度来设置 label 和表单控件的样式。当页面宽度大于 480px 时，它会自动将 label 与表单控件放置于同一行。当小于 480px 时，label 会被放置于表单元素之上。</p>
+    <h3>如需避免 jQuery Mobile 自动为可点击元素设置样式，请使用 data-role="none" 属性</h3>
+    <form method="post" action="demoform.asp">
+        <label for="fname4">姓 （未设置 data-role="none"）：</label>
+        <input type="text" name="fname4" id="fname4">
+        <label for="fname5">名 （已设置 data-role="none"）：</label>
+        <input type="text" name="fname5" id="fname5" data-role="none">
+        <input type="submit" data-inline="true" value="提交">
+    </form>
+<hr>
+    <!--jQuery Mobile表单输入元素-->
+    <h3>jQuery Mobile文本输入</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <label for="name">姓名：</label>
+            <input type="text" name="name" id="name" placeholder="您的姓名是...">
+
+            <label for="bd">生日：</label>
+            <input type="date" name="bd" id="bd" placeholder="您的生日是...">
+
+            <label for="email">邮箱：</label>
+            <input type="email" name="email" id="email" placeholder="您的邮箱是...">
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>文本框：使用 &lt;textarea&gt; 来实现多行文本输入。文本框会自动扩大，以适应输入的文本行</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <label for="info">信息：</label>
+            <textarea name="info" id="info"></textarea>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>搜索框</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <label for="search">Search</label>
+            <input type="search" name="search" id="search" placeholder="搜素...">
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>单选按钮：</h3>
+    <p>如需创建一套单选按钮，请添加 type="radio" 的 input 元素以及相应的 label。在 &lt;fieldset&gt; 元素中包装单选按钮。您也可以增加一个 &lt;legend&gt; 元素来定义 &lt;fieldset&gt; 的标题</p>
+    <form method="post" action="jQueryMobile表单.html">
+        <fieldset data-role="controlgroup">
+            <legend>请选择你的性别：</legend>
+            <label for="male">男性</label>
+            <input type="radio" name="gender" id="male">
+            <label for="female">女性</label>
+            <input type="radio" name="gender" id="female">
+        </fieldset>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>复选框</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <fieldset data-role="controlgroup">
+            <legend>选择你喜欢的颜色：</legend>
+            <label for="red">Red</label>
+            <input type="checkbox" name="color" id="red">
+            <label for="green">Green</label>
+            <input type="checkbox" name="color" id="green">
+            <label for="blue">Blue</label>
+            <input type="checkbox" name="color" id="blue">
+        </fieldset>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+    <h3>如需对单选框或复选框进行水平分组，请使用 data-type="horizontal" 属性</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>选择你喜欢的颜色：</legend>
+            <label for="red1">Red</label>
+            <input type="checkbox" name="color" id="red1">
+            <label for="green1">Green</label>
+            <input type="checkbox" name="color" id="green1">
+            <label for="blue1">Blue</label>
+            <input type="checkbox" name="color" id="blue1">
+        </fieldset>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>也可以使用域容器来包装 &lt;fieldset&gt;</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <legend>选择你喜欢的颜色：</legend>
+                <label for="red2">Red</label>
+                <input type="checkbox" name="color" id="red2">
+                <label for="green2">Green</label>
+                <input type="checkbox" name="color" id="green2">
+                <label for="blue2">Blue</label>
+                <input type="checkbox" name="color" id="blue2">
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>如果您希望“预选”其中一个按钮，请使用 HTML &lt;input&gt; 标签的 checked 属性</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <legend>选择你喜欢的颜色：</legend>
+                <label for="red3">Red</label>
+                <input type="checkbox" name="color" id="red3">
+                <label for="green3">Green</label>
+                <input type="checkbox" name="color" id="green3">
+                <label for="blue3">Blue</label>
+                <input type="checkbox" name="color" id="blue3" checked>
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+<hr/>
+
+    <!--jQuery Mobile选择菜单-->
+    <h3>jQuery Mobile选择菜单</h3>
+    <p>&lt;select&gt; 元素创建带有若干选项的下拉菜单。<br/>
+        &lt;select&gt; 元素中的 &lt;option&gt; 元素定义列表中的可用选项：</p>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="fieldcontain">
+                <label for="day">选择日期</label>
+                <select name="day" id="day">
+                    <option value="mon">星期一</option>
+                    <option value="tue">星期二</option>
+                    <option value="wed">星期三</option>
+                    <option value="thi">星期四</option>
+                    <option value="fri">星期五</option>
+                    <option value="sat">星期六</option>
+                    <option value="sun">星期日</option>
+                </select>
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>如果列表中包含了一长列相关的选项，请在 &lt;select&gt; 中使用 &lt;optgroup&gt; 元素</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="fieldcontain">
+                <label for="day1">选择日期</label>
+                <select name="day" id="day1">
+                    <optgroup label="工作日">
+                        <option value="mon">星期一</option>
+                        <option value="tue">星期二</option>
+                        <option value="wed">星期三</option>
+                        <option value="thi">星期四</option>
+                        <option value="fri">星期五</option>
+                    </optgroup>
+                    <optgroup label="周末">
+                        <option value="sat">星期六</option>
+                        <option value="sun">星期日</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>自定义选择菜单：如果您希望在所有移动设备上显示一致外观的选择菜单，请使用 jQuery 的自定义选择菜单，data-native-menu="false" 属性</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="fieldcontain">
+                <label for="day2">选择日期</label>
+                <select name="day2" id="day2" data-native-menu="false">
+                    <option value="mon">星期一</option>
+                    <option value="tue">星期二</option>
+                    <option value="wed">星期三</option>
+                    <option value="thi">星期四</option>
+                    <option value="fri">星期五</option>
+                    <option value="sat">星期六</option>
+                    <option value="sun">星期日</option>
+                </select>
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>Multiple Selections:如需在选择菜单中选取多个选项，请在 &lt;select&gt; 元素中使用 multiple 属性</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="fieldcontain">
+                <label for="day3">选择日期</label>
+                <select name="day3" id="day3" multiple data-native-menu="false">
+                    <option value="mon">星期一</option>
+                    <option value="tue">星期二</option>
+                    <option value="wed">星期三</option>
+                    <option value="thi">星期四</option>
+                    <option value="fri">星期五</option>
+                    <option value="sat">星期六</option>
+                    <option value="sun">星期日</option>
+                </select>
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>使用data-role="controlgroup"组合一个或多个选择菜单</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <legend>安排会议：</legend>
+
+                <label for="day4">选择日期</label>
+                <select name="day4" id="day4" data-native-menu="false">
+                    <option value="mon">星期一</option>
+                    <option value="tue">星期二</option>
+                    <option value="wed">星期三</option>
+                    <option value="thi">星期四</option>
+                    <option value="fri">星期五</option>
+                    <option value="sat">星期六</option>
+                    <option value="sun">星期日</option>
+                </select>
+
+                <label for="time">选择时间：</label>
+                <select name="time" id="time" data-native-menu="false">
+                    <option value="8">8:00</option>
+                    <option value="9">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                </select>
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>使用data-type="horizontal"水平地组合选择菜单<br/>在&lt;option&gt;中使用selected属性</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>安排会议：</legend>
+
+                <label for="day5">选择日期</label>
+                <select name="day5" id="day5" data-native-menu="false">
+                    <option value="mon">星期一</option>
+                    <option value="tue">星期二</option>
+                    <option value="wed">星期三</option>
+                    <option value="thi" selected>星期四</option>
+                    <option value="fri">星期五</option>
+                    <option value="sat">星期六</option>
+                    <option value="sun">星期日</option>
+                </select>
+
+                <label for="time1">选择时间：</label>
+                <select name="time1" id="time1" data-native-menu="false">
+                    <option value="8">8:00</option>
+                    <option value="9">9:00</option>
+                    <option value="10" selected>10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                </select>
+            </fieldset>
+        </div>
+        <input type="submit" value="提交" data-inline="true">
+    </form>
+
+    <h3>可折叠表单</h3>
+    <form method="post" action="jQueryMobile表单.html">
+            <fieldset data-role="collapsible">
+                <legend>我是可折叠内容</legend>
+                <div data-role="controlgroup">
+                    <legend>安排会议：</legend>
+
+                    <label for="day6">选择日期</label>
+                    <select name="day6" id="day6" data-native-menu="false">
+                        <option value="mon">星期一</option>
+                        <option value="tue">星期二</option>
+                        <option value="wed">星期三</option>
+                        <option value="thi" selected>星期四</option>
+                        <option value="fri">星期五</option>
+                        <option value="sat">星期六</option>
+                        <option value="sun">星期日</option>
+                    </select>
+
+                    <label for="time2">选择时间：</label>
+                    <select name="time2" id="time2" data-native-menu="false">
+                        <option value="8">8:00</option>
+                        <option value="9">9:00</option>
+                        <option value="10" selected>10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                    </select>
+                </div>
+                <input type="submit" value="提交" data-inline="true">
+            </fieldset>
+    </form>
+<hr/>
+
+    <!--jQuery Mobile表单——滑块-->
+    <h3>jQuery Mobile滑块控件：如需创建滑块，请使用 &lt;input type="range"&gt;</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <label for="points">Points</label>
+            <input type="range" name="points" id="points" value="50" min="10" max="100" data-highlight="true">
+        </div>
+    </form>
+
+    <h3>使用下列属性来规定限定：</h3>
+    <ul>
+        <li>max - 规定允许的最大值</li>
+        <li>min - 规定允许的最小值</li>
+        <li>step - 规定合法的数字间隔</li>
+        <li>value - 规定默认值</li>
+        <li>如果希望突出显示截止滑块值的这段轨道，请添加 data-highlight="true"</li>
+    </ul>
+
+    <h3>切换开关：常用于开/关或对/错按钮，使用 data-role="slider" 的 &lt;select&gt; 元素，并添加两个 &lt;option&gt; 元素</h3>
+    <form method="post" action="jQueryMobile表单.html">
+        <div data-role="fieldcontain">
+            <label for="switch">开关</label>
+            <select name="switch" id="switch" data-role="slider">
+                <option value="on">On</option>
+                <option value="off">Off</option>
+            </select>
+        </div>
+    </form>
+
+</div>
+<div data-role="footer">
+    <h3>页眉</h3>
+</div>
+
+</body>
+</html>
